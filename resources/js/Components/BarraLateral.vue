@@ -4,255 +4,164 @@ import {Link} from "@inertiajs/vue3";
 
 <template>
     <!-- Seccion columna izquierda -->
-    <section class="seccion-columna w-1/10 p-4 pb-8">
+    <section class="w-3/12 text-xs sm:text-base sm:[&>ul>li]:pr-3 bg-flamingo seccion-columna p-4 pb-8 hover:[&>ul>li]:text-white [&>ul>li]:overflow-ellipsis [&>ul>li]:overflow-hidden">
         <!-- Genero -->
-        <h5 class="py-4 font-bold underline">Por género:</h5>
+        <h5 class="py-4 font-bold underline">Género</h5>
         <ul>
             <li>
-                <Link href="">Acción</Link>
+                <Link :href="route('obras')" :data="{ genero : 'acción', barraLateral: 'genero' }">Acción</Link>
             </li>
             <li>
-                <Link href="">Animación</Link>
+                <Link :href="route('obras')" :data="{ genero : 'aventuras', barraLateral: 'genero' }">Aventuras</Link>
             </li>
             <li>
-                <Link href="">Aventuras</Link>
+                <Link :href="route('obras')" :data="{ genero : 'biográfico', barraLateral: 'genero' }">Biográfico</Link>
             </li>
             <li>
-                <Link href="">Bibliográfico</Link>
+                <Link :href="route('obras')" :data="{ genero : 'bélico', barraLateral: 'genero' }">Bélico</Link>
             </li>
             <li>
-                <Link href="">Bélico</Link>
+                <Link :href="route('obras')" :data="{ genero : 'ciencia ficción', barraLateral: 'genero' }">Ciencia ficción</Link>
             </li>
             <li>
-                <Link href="">Ciencia ficción</Link>
+                <Link :href="route('obras')" :data="{ genero : 'cine mudo', barraLateral: 'genero' }">Cine Mudo</Link>
             </li>
             <li>
-                <Link href="">Cine Mudo</Link>
+                <Link :href="route('obras')" :data="{ genero : 'cine negro', barraLateral: 'genero' }">Cine Negro</Link>
             </li>
             <li>
-                <Link href="">Cine Negro</Link>
+                <Link :href="route('obras')" :data="{ genero : 'comedia', barraLateral: 'genero' }">Comedia</Link>
             </li>
             <li>
-                <Link href="">Comedia</Link>
+                <Link :href="route('obras')" :data="{ genero : 'cortometraje', barraLateral: 'genero' }">Cortometraje</Link>
             </li>
             <li>
-                <Link href="">Cortometraje</Link>
+                <Link :href="route('obras')" :data="{ genero : 'crimen', barraLateral: 'genero' }">Crimen</Link>
             </li>
             <li>
-                <Link href="">Crimen</Link>
+                <Link :href="route('obras')" :data="{ genero : 'deportiva', barraLateral: 'genero' }">Deportiva</Link>
             </li>
             <li>
-                <Link href="">Deportiva</Link>
+                <Link :href="route('obras')" :data="{ genero : 'documental', barraLateral: 'genero' }">Documental</Link>
             </li>
             <li>
-                <Link href="">Documental</Link>
+                <Link :href="route('obras')" :data="{ genero : 'drama', barraLateral: 'genero' }">Drama</Link>
             </li>
             <li>
-                <Link href="">Drama</Link>
+                <Link :href="route('obras')" :data="{ genero : 'fantástico', barraLateral: 'genero' }">Fantástico</Link>
             </li>
             <li>
-                <Link href="">Erótico</Link>
+                <Link :href="route('obras')" :data="{ genero : 'historica', barraLateral: 'genero' }">Histórica</Link>
             </li>
             <li>
-                <Link href="">Experimental</Link>
+                <Link :href="route('obras')" :data="{ genero : 'infantil', barraLateral: 'genero' }">Infantil</Link>
             </li>
             <li>
-                <Link href="">Fantástico</Link>
+                <Link :href="route('obras')" :data="{ genero : 'intriga', barraLateral: 'genero' }">Intriga</Link>
             </li>
             <li>
-                <Link href="">Histórica</Link>
+                <Link :href="route('obras')" :data="{ genero : 'musical', barraLateral: 'genero' }">Musical</Link>
             </li>
             <li>
-                <Link href="">Infantil</Link>
+                <Link :href="route('obras')" :data="{ genero : 'policiaca', barraLateral: 'genero' }">Policiaca</Link>
             </li>
             <li>
-                <Link href="">Intriga</Link>
+                <Link :href="route('obras')" :data="{ genero : 'propagandístico', barraLateral: 'genero' }">Propagandístico</Link>
             </li>
             <li>
-                <Link href="">Musical</Link>
+                <Link :href="route('obras')" :data="{ genero : 'película de culto', barraLateral: 'genero' }">Película de culto</Link>
             </li>
             <li>
-                <Link href="">Policiaca</Link>
+                <Link :href="route('obras')" :data="{ genero : 'road movie', barraLateral: 'genero' }">Road Movie</Link>
             </li>
             <li>
-                <Link href="">Propagandístico</Link>
+                <Link :href="route('obras')" :data="{ genero : 'romance', barraLateral: 'genero' }">Romance</Link>
             </li>
             <li>
-                <Link href="">Película de culto</Link>
+                <Link :href="route('obras')" :data="{ genero : 'terror', barraLateral: 'genero' }">Terror</Link>
             </li>
             <li>
-                <Link href="">Religiosa</Link>
+                <Link :href="route('obras')" :data="{ genero : 'thriller', barraLateral: 'genero' }">Thriller</Link>
             </li>
             <li>
-                <Link href="">Road Movie</Link>
-            </li>
-            <li>
-                <Link href="">Romance</Link>
-            </li>
-            <li>
-                <Link href="">Serie B</Link>
-            </li>
-            <li>
-                <Link href="">Serie de TV</Link>
-            </li>
-            <li>
-                <Link href="">Terror</Link>
-            </li>
-            <li>
-                <Link href="">Thriller</Link>
-            </li>
-            <li>
-                <Link href="">Western</Link>
+                <Link :href="route('obras')" :data="{ genero : 'western', barraLateral: 'genero' }">Western</Link>
             </li>
         </ul>
 
         <!-- Decada -->
-        <h5 class="py-4 font-bold underline">Por década:</h5>
+        <h5 class="py-4 font-bold underline">Década</h5>
         <ul>
             <li>
-                <Link href="">2020s</Link>
+                <Link :href="route('obras')" :data="{ desde : '2010', hasta : '2019', barraLateral: 'decada' }">2010s</Link>
             </li>
             <li>
-                <Link href="">2010s</Link>
+                <Link :href="route('obras')" :data="{ desde : '2000', hasta : '2009', barraLateral: 'decada' }">2000s</Link>
             </li>
             <li>
-                <Link href="">2000s</Link>
+                <Link :href="route('obras')" :data="{ desde : '1990', hasta : '1999', barraLateral: 'decada' }">90s</Link>
             </li>
             <li>
-                <Link href="">90s</Link>
+                <Link :href="route('obras')" :data="{ desde : '1980', hasta : '1989', barraLateral: 'decada' }">80s</Link>
             </li>
             <li>
-                <Link href="">80s</Link>
+                <Link :href="route('obras')" :data="{ desde : '1970', hasta : '1979', barraLateral: 'decada' }">70s</Link>
             </li>
             <li>
-                <Link href="">70s</Link>
+                <Link :href="route('obras')" :data="{ desde : '1960', hasta : '1969', barraLateral: 'decada' }">60s</Link>
             </li>
             <li>
-                <Link href="">60s</Link>
+                <Link :href="route('obras')" :data="{ desde : '1950', hasta : '1959', barraLateral: 'decada' }">50s</Link>
             </li>
             <li>
-                <Link href="">50s</Link>
+                <Link :href="route('obras')" :data="{ desde : '1940', hasta : '1949', barraLateral: 'decada' }">40s</Link>
             </li>
             <li>
-                <Link href="">40s</Link>
+                <Link :href="route('obras')" :data="{ desde : '1930', hasta : '1939', barraLateral: 'decada' }">30s</Link>
             </li>
             <li>
-                <Link href="">30s</Link>
+                <Link :href="route('obras')" :data="{ desde : '1920', hasta : '1929', barraLateral: 'decada' }">20s</Link>
             </li>
             <li>
-                <Link href="">20s</Link>
+                <Link :href="route('obras')" :data="{ desde : '1900', hasta : '1910', barraLateral: 'decada' }">00s</Link>
             </li>
         </ul>
 
         <!-- Pais -->
-        <h5 class="py-4 font-bold underline">Por país:</h5>
+        <h5 class="py-4 font-bold underline">País</h5>
         <ul>
             <li>
-                <Link href="">Alemania</Link>
+                <Link :href="route('obras')" :data="{ pais : 'Alemania', barraLateral: 'pais' }">Alemania</Link>
             </li>
             <li>
-                <Link href="">Andorra</Link>
+                <Link :href="route('obras')" :data="{ pais : 'Australia', barraLateral: 'pais' }">Australia</Link>
             </li>
             <li>
-                <Link href="">Argentina</Link>
+                <Link :href="route('obras')" :data="{ pais : 'España', barraLateral: 'pais' }">España</Link>
             </li>
             <li>
-                <Link href="">Australia</Link>
+                <div id="tio">
+                  <Link :href="route('obras')" :data="{ pais : 'Estados Unidos de America', barraLateral: 'pais' }">Estados Unidos de América</Link>
+                </div>
+
             </li>
             <li>
-                <Link href="">Austria</Link>
+                <Link :href="route('obras')" :data="{ pais : 'Francia', barraLateral: 'pais' }">Francia</Link>
             </li>
             <li>
-                <Link href="">Bélgica</Link>
+                <Link :href="route('obras')" :data="{ pais : 'Italia', barraLateral: 'pais' }">Italia</Link>
             </li>
             <li>
-                <Link href="">Brasil</Link>
+                <Link :href="route('obras')" :data="{ pais : 'Japón', barraLateral: 'pais' }">Japón</Link>
             </li>
             <li>
-                <Link href="">Canadá</Link>
+                <Link :href="route('obras')" :data="{ pais : 'Nueva Zelanda', barraLateral: 'pais' }">Nueva Zelanda</Link>
             </li>
             <li>
-                <Link href="">China</Link>
+                <Link :href="route('obras')" :data="{ pais : 'Reino Unido', barraLateral: 'pais' }">Reino Unido</Link>
             </li>
             <li>
-                <Link href="">Colmbia</Link>
-            </li>
-            <li>
-                <Link href="">Dinamarca</Link>
-            </li>
-            <li>
-                <Link href="">España</Link>
-            </li>
-            <li>
-                <Link href="">Estados Unidos de América</Link>
-            </li>
-            <li>
-                <Link href="">Estonia</Link>
-            </li>
-            <li>
-                <Link href="">Federación de Rusia</Link>
-            </li>
-            <li>
-                <Link href="">Finlandia</Link>
-            </li>
-            <li>
-                <Link href="">Francia</Link>
-            </li>
-            <li>
-                <Link href="">Hungría</Link>
-            </li>
-            <li>
-                <Link href="">Irlanda</Link>
-            </li>
-            <li>
-                <Link href="">Islandia</Link>
-            </li>
-            <li>
-                <Link href="">Italia</Link>
-            </li>
-            <li>
-                <Link href="">Japón</Link>
-            </li>
-            <li>
-                <Link href="">Noruega</Link>
-            </li>
-            <li>
-                <Link href="">Países Bajos</Link>
-            </li>
-            <li>
-                <Link href="">Polonia</Link>
-            </li>
-            <li>
-                <Link href="">Portugal</Link>
-            </li>
-            <li>
-                <Link href="">Reino Unido</Link>
-            </li>
-            <li>
-                <Link href="">Rumania</Link>
-            </li>
-            <li>
-                <Link href="">Ucrania</Link>
+                <Link :href="route('obras')" :data="{ pais : 'USSR', barraLateral: 'pais' }">USSR</Link>
             </li>
         </ul>
     </section>
 </template>
-
-<style scoped>
-/****************************************** Seccion columna ******************************************/
-.seccion-columna {
-    background-color: #e37f81;
-}
-
-.seccion-columna a:hover {
-    color: white;
-}
-
-@media screen and (max-width: 768px) {
-    /******* Seccion columna *******/
-    .seccion-columna {
-        width: 40%;
-    }
-
-}
-</style>

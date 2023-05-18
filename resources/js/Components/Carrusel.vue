@@ -1,4 +1,3 @@
-<!--TODO -> ESTE ES EL COMPONENTE DEL CARRUSEL, YO PERSONALMENTE BAJARÍA SUS IMAGENES DE CALIDAD, PORQUE AUNQUE CARGAR CARGAN, SE NOTA QUE SE PUEDE MEJORAR ALGO EL RENDIMIENTO SI OCUPAN MENOS-->
 <template>
     <!-- Seccion Principal Carrusel -->
     <div id="default-carousel" class="relative w-full" data-carousel="slide">

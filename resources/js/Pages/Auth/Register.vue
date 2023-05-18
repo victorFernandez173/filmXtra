@@ -20,85 +20,84 @@ const submit = () => {
 };
 </script>
 
+
 <template>
     <Head>
         <title>Registro</title>
         <meta name="description" content="Página de registro">
     </Head>
-
-    <form @submit.prevent="submit">
-        <div>
-            <InputLabel for="name" value="Name"/>
-
-            <TextInput
-                id="name"
-                type="text"
-                class="mt-1 block w-full"
-                v-model="form.name"
-                required
-                autofocus
-                autocomplete="name"
-            />
-
-            <InputError class="mt-2" :message="form.errors.name"/>
-        </div>
-
-        <div class="mt-4">
-            <InputLabel for="email" value="Email"/>
-
-            <TextInput
-                id="email"
-                type="email"
-                class="mt-1 block w-full"
-                v-model="form.email"
-                required
-                autocomplete="username"
-            />
-
-            <InputError class="mt-2" :message="form.errors.email"/>
-        </div>
-
-        <div class="mt-4">
-            <InputLabel for="password" value="Password"/>
-
-            <TextInput
-                id="password"
-                type="password"
-                class="mt-1 block w-full"
-                v-model="form.password"
-                required
-                autocomplete="new-password"
-            />
-
-            <InputError class="mt-2" :message="form.errors.password"/>
-        </div>
-
-        <div class="mt-4">
-            <InputLabel for="password_confirmation" value="Confirm Password"/>
-
-            <TextInput
-                id="password_confirmation"
-                type="password"
-                class="mt-1 block w-full"
-                v-model="form.password_confirmation"
-                required
-                autocomplete="new-password"
-            />
-
-            <InputError class="mt-2" :message="form.errors.password_confirmation"/>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <Link
-                :href="route('login')"
-                class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            >
-                Already registered?
+    <section class="bg-cover bg-[url('images/posters-fondo.png')]">
+        <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+            <Link :href="route('/')" class="flex items-center mb-6 text-2xl font-semibold text-gray-900">
+                <img class="w-60 mr-2" src="/images/logo-blanco.png" alt="Logo FlimXtra">
             </Link>
+            <div class="w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
+                <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                    <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
+                        Crear una cuenta
+                    </h1>
+                    <form class="space-y-4 md:space-y-6" @submit.prevent="submit">
+                        <div class="mt-4">
+                            <InputLabel for="name" value="Nombre" class="block mb-2 text-sm font-medium text-gray-900" />
+                            <TextInput
+                                id="name"
+                                type="name"
+                                placeholder="tu nombre"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-flamingo focus:border-flamingo block w-full p-2.5"
+                                v-model="form.name"
+                                autocomplete="name"
+                            />
+                            <InputError class="mt-2" :message="form.errors.nombre"/>
+                        </div>
 
-            <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                Register
-            </PrimaryButton>
+                        <div class="mt-4">
+                            <InputLabel for="email" value="Correo electrónico" class="block mb-2 text-sm font-medium text-gray-900" />
+                            <TextInput
+                                id="email"
+                                type="email"
+                                placeholder="nombre@correo.com"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-flamingo focus:border-flamingo block w-full p-2.5"
+                                v-model="form.email"
+                                autocomplete="username"
+                            />
+                            <InputError class="mt-2" :message="form.errors.email"/>
+                        </div>
+
+                        <div class="mt-4">
+                            <InputLabel for="password" value="Contraseña" class="block mb-2 text-sm font-medium text-gray-900" />
+                            <TextInput
+                                id="password"
+                                type="password"
+                                placeholder="••••••••"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-flamingo focus:border-flamingo block w-full p-2.5"
+                                v-model="form.password"
+                                autocomplete="new-password"
+                            />
+                            <InputError class="mt-2" :message="form.errors.password"/>
+                        </div>
+
+                        <div class="mt-4">
+                            <InputLabel for="password_confirmation" value="Confirmar contraseña" class="block mb-2 text-sm font-medium text-gray-900" />
+                            <TextInput
+                                id="password_confirmation"
+                                type="password"
+                                placeholder="••••••••"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-flamingo focus:border-flamingo block w-full p-2.5"
+                                v-model="form.password_confirmation"
+                                autocomplete="new-password"
+                            />
+                            <InputError class="mt-2" :message="form.errors.password_confirmation"/>
+                        </div>
+                        <PrimaryButton class="w-full text-white bg-flamingo hover:bg-black hover:text-flamingo focus:bg-flamingo focus:ring-flamingo focus:border-flamingo focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                            Crear cuenta
+                        </PrimaryButton>
+                        <p class="text-sm font-light text-gray-500">
+                            ¿Ya tienes cuenta? <Link :href="route('login')" class="font-medium text-primary-600 hover:underline">¡Inicia
+                            sesión aquí!</Link>
+                        </p>
+                    </form>
+                </div>
+            </div>
         </div>
-    </form>
+    </section>
 </template>

@@ -8,10 +8,11 @@ export default {
 
 <!--script estandar para lo habitual-->
 <script setup>
-import { Link, Head } from "@inertiajs/vue3";
+import { Head } from "@inertiajs/vue3";
 import Carrusel from "../Components/Carrusel.vue";
 import { initFlowbite } from 'flowbite'
 import { onMounted } from "vue";
+import Poster from "../Components/Poster.vue";
 
 // Para montar componentes Flowbite
 onMounted(() => {
@@ -22,6 +23,7 @@ defineProps(['obras']);
 </script>
 
 <template>
+    <!--  TODO revisar la responsividad: tamaños de fuente, anchura barra lateral...   -->
     <Head>
         <title>Inicio</title>
         <meta name="description" content="Página de bienvenida">
@@ -30,47 +32,12 @@ defineProps(['obras']);
     <Carrusel></Carrusel>
 
     <!-- Seccion Principal de contenido -->
-    <div class="container mx-auto contenedor-principal justify-center">
-        <!-- Filas de peliculas -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 seccion-peliculas text-center items-center justify-center" v-for="n in 4">
-            <div v-for="m in 4">
-                <Link :href="route('obra', [$page['props']['obras'][n*4-m]['titulo'].replaceAll(' ', '_')])">
-                    <h3 > {{ $page['props']['obras'][n*4-m]['titulo'] }}</h3>
-                </Link>
-                <Link :href="route('obra', [$page['props']['obras'][n*4-m]['titulo'].replaceAll(' ', '_')])">
-                    <img :src="'posters/' + $page['props']['obras'][n*4-m]['poster']['ruta']" :alt="$page['props']['obras'][n*4-m]['poster']['alt']">
-                </Link>
-            </div>
+    <div class="flex w-4/5 m-auto pt-10">
+        <!-- Seccion Principal de contenido -->
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 seccion-peliculas text-center w-full justify-items-center">
+            <!-- Cada poster es un componente -->
+            <Poster v-for="obra in obras" :key="obra['id']" :obra="obra" :titulo="`text-2xl hover:text-xl`" />
         </div>
     </div>
 </template>
-
-<style>
-/*************************** Seccion peliculas ******************************/
-
-.seccion-peliculas img {
-    width: 23rem;
-    padding: 2rem;
-    padding-top: 3rem;
-}
-
-.seccion-peliculas h3 {
-    height: 5rem;
-    color: #e37f81;
-    font-size: 1.7rem;
-    font-weight: bold;
-    text-decoration: underline;
-    padding-top: 2rem;
-    font-family: 'Oswald', sans-serif;
-}
-
-/****************************************** RESPONSIVE ******************************************/
-/****************************************** Movil ******************************************/
-@media screen and (max-width: 768px) {
-    /******* Seccion peliculas *******/
-    img, svg, video, canvas, audio, iframe, embed, object {
-        display: inline-block;
-        vertical-align: middle;
-    }
-}
-</style>

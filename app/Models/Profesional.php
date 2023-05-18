@@ -13,7 +13,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int $obra_id
  * @property int $medio_id
  * @property string $autor
- * @property string $web
  * @property string $contenido
  * @property Carbon $creada
  * @property Carbon $modificada
@@ -49,7 +48,6 @@ class Profesional extends Model
         'obra_id',
         'medio_id',
         'autor',
-        'web',
         'contenido',
     ];
 

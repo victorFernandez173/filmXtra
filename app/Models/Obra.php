@@ -47,7 +47,7 @@ class Obra extends Model
      */
     protected $casts = [
         'duracion' => 'float',
-        'fecha' => 'datetime',
+        'fecha' => 'date:Y',
         'creada' => 'datetime',
         'modificada' => 'datetime'
     ];
@@ -70,9 +70,9 @@ class Obra extends Model
     /**
      * Get the secuelas of the obra.
      */
-    public function secuelas(): HasMany
+    public function secuela(): HasOne
     {
-        return $this->hasMany(Secuela::class);
+        return $this->hasOne(Secuela::class);
     }
 
     /**

@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\FiltrarObrasController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Auth\ProviderController;
 use Inertia\Inertia;
+use App\Http\Controllers\BienvenidaController;
+use App\Http\Controllers\ObtenerObraController;
 
 
 /*
@@ -18,29 +21,19 @@ use Inertia\Inertia;
 |
 */
 
-////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////
-/*PARA CONTROLAR CON AUTENTICACIÓN Y VERIFICACIÓN DE EMAIL LAS RUTAS*/
-/*->middleware(['auth', 'verified'])->name('Welcome');*/
-////////////////////////////////////////////////////////////////////////
-/*PARA TESTEOS*/
-Route::get('/filter',  function () {
-    return Inertia::render('Filter');
-});
-////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////
 
 /*Route::get('/', [MainController::class, 'bienvenida'])->name('/');*/
+Route::get('/', [BienvenidaController::class, 'bienvenida'])->name('/');
 
-Route::get('obra/{titulo}', [MainController::class, 'fichaPelicula'])->name('obra');
+Route::get('obra/{titulo}', [ObtenerObraController::class, 'fichaPelicula'])->name('obra');
+
+Route::get('/obras', [FiltrarObrasController::class, 'cargaDatos'])->name('obras');
 
 Route::get('/auth/{provider}/redirect', [ProviderController::class, 'redirect'])->name('redirect');
 Route::get('/auth/{provider}/callback', [ProviderController::class, 'callback'])->name('callback');
 
 /*Route::get('/auth/github/redirect', [ProviderController::class, 'redirect'])->name('redirect');
 Route::get('/auth/github/callback', [ProviderController::class, 'callback'])->name('callback');*/
-
-Route::get('/', [MainController::class, 'bienvenida'])->name('bienvenida');
 
 /*Route::get('/logueado', [MainController::class, 'logueado'])
 ->middleware('auth', 'verified')->name('logueado');*/
