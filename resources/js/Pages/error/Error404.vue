@@ -17,7 +17,7 @@ defineProps([ 'status', 'message'])
             <p class="mt-5 mb-12 text-2xl leading-7 text-gray-800">Pero si vuelves al inicio, en FilmXtra encontrarás todo lo que necesitas.</p>
             <img src="/gif/error-gif.gif" class="m-auto mt-7 w-80" alt="Gif error cine">
             <div class="mt-10 flex items-center justify-center gap-x-6">
-                <Link :href="route('/')" class="hover:text-flamingo hover:bg-black bg-flamingo rounded-md px-3.5 py-2.5 text-sm font-semibold text-white ">Ir a inicio &rarr;</Link>
+                <Link :href="route('/')" class="hover:text-flamingo hover:bg-black bg-flamingo rounded-md px-3.5 py-2.5 text-sm font-semibold text-white">Ir a inicio &rarr;</Link>
             </div>
             <img src="/images/logo.png" class="m-auto w-60 mt-10" alt="Logo FilmXtra">
         </div>

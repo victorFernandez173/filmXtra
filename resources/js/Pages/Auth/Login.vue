@@ -50,6 +50,7 @@ const submit = () => {
                             <TextInput
                                 id="email"
                                 type="email"
+                                placeholder="nombre@correo.com"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-flamingo focus:border-flamingo block w-full p-2.5"
                                 v-model="form.email"
                                 autofocus
@@ -62,6 +63,7 @@ const submit = () => {
                             <TextInput
                                 id="password"
                                 type="password"
+                                placeholder="••••••••"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-flamingo focus:border-flamingo block w-full p-2.5"
                                 v-model="form.password"
                                 autocomplete="current-password"
@@ -74,7 +76,7 @@ const submit = () => {
                                 <div class="ml-0 text-sm">
                                     <label class="flex items-center">
                                         <Checkbox name="remember" v-model:checked="form.remember"/>
-                                        <span class="ml-2 text-sm text-gray-600">Recuerdame</span>
+                                        <span class="ml-2 text-sm text-gray-600">Recuérdame</span>
                                     </label>
                                 </div>
                             </div>

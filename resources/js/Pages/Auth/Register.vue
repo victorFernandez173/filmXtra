@@ -42,7 +42,7 @@ const submit = () => {
                             <TextInput
                                 id="name"
                                 type="name"
-                                placeholder="tu nombre"
+                                placeholder="Nombre"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-flamingo focus:border-flamingo block w-full p-2.5"
                                 v-model="form.name"
                                 autocomplete="name"
@@ -92,8 +92,7 @@ const submit = () => {
                             Crear cuenta
                         </PrimaryButton>
                         <p class="text-sm font-light text-gray-500">
-                            ¿Ya tienes cuenta? <Link :href="route('login')" class="font-medium text-primary-600 hover:underline">¡Inicia
-                            sesión aquí!</Link>
+                            ¿Ya tienes cuenta? <Link :href="route('login')" class="font-medium text-primary-600 hover:underline">¡Inicia sesión aquí!</Link>
                         </p>
                     </form>
                 </div>
