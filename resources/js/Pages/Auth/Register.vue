@@ -47,7 +47,7 @@ const submit = () => {
                                 v-model="form.name"
                                 autocomplete="name"
                             />
-                            <InputError class="mt-2" :message="form.errors.nombre"/>
+                            <InputError class="mt-2" :message="form.errors.name"/>
                         </div>
 
                         <div class="mt-4">
@@ -68,7 +68,6 @@ const submit = () => {
                             <TextInput
                                 id="password"
                                 type="password"
-                                placeholder="••••••••"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-flamingo focus:border-flamingo block w-full p-2.5"
                                 v-model="form.password"
                                 autocomplete="new-password"
@@ -81,7 +80,6 @@ const submit = () => {
                             <TextInput
                                 id="password_confirmation"
                                 type="password"
-                                placeholder="••••••••"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-flamingo focus:border-flamingo block w-full p-2.5"
                                 v-model="form.password_confirmation"
                                 autocomplete="new-password"

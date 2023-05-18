@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules;
 
-class RegisterRequest extends FormRequest
+class UserRegisterRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,7 +22,7 @@ class RegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nombre' => 'required|max:25',
+            'name' => 'required|max:25',
             'email' => 'required|string|email|max:60|unique:'.User::class,
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ];
@@ -36,8 +36,8 @@ class RegisterRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'nombre.required' => 'Introduzca nombre',
-            'nombre.max' => 'Nombre: máximo 25 caracteres',
+            'name.required' => 'Introduzca nombre',
+            'name.max' => 'Nombre: máximo 25 caracteres',
             'email.required' => 'Introduzca email',
             'email.email' => 'Formato de email',
             'email.max' => 'Email: máximo 60 caracteres',
