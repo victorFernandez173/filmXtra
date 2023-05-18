@@ -12,7 +12,9 @@ const props = defineProps({
 const form = useForm({});
 
 const submit = () => {
+    console.log('HOLAAAAAAAAAAAAAAA');
     form.post(route('verification.send'));
+    console.log('222222222222222222');
 };
 
 const verificationLinkSent = computed(() => props.status === 'verification-link-sent');
@@ -35,8 +37,9 @@ const verificationLinkSent = computed(() => props.status === 'verification-link-
 
     <form @submit.prevent="submit">
         <div class="mt-4 flex items-center justify-between">
-            <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                Resend Verification Email
+            <!-- <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing"> -->
+            <PrimaryButton :class="{ 'opacity-25': form.processing }">
+                Reenviar verification de email
             </PrimaryButton>
 
             <Link

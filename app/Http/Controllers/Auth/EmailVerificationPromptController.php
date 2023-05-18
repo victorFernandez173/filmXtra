@@ -8,6 +8,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
+use Monolog\Formatter\SyslogFormatter;
 
 class EmailVerificationPromptController extends Controller
 {

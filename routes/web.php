@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\Auth\ProviderController;
 use Inertia\Inertia;
 
 
@@ -29,9 +30,21 @@ Route::get('/filter',  function () {
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 
-Route::get('/', [MainController::class, 'bienvenida'])->name('/');
+/*Route::get('/', [MainController::class, 'bienvenida'])->name('/');*/
 
 Route::get('obra/{titulo}', [MainController::class, 'fichaPelicula'])->name('obra');
+
+Route::get('/auth/{provider}/redirect', [ProviderController::class, 'redirect'])->name('redirect');
+Route::get('/auth/{provider}/callback', [ProviderController::class, 'callback'])->name('callback');
+
+/*Route::get('/auth/github/redirect', [ProviderController::class, 'redirect'])->name('redirect');
+Route::get('/auth/github/callback', [ProviderController::class, 'callback'])->name('callback');*/
+
+Route::get('/', [MainController::class, 'bienvenida'])->name('bienvenida');
+
+/*Route::get('/logueado', [MainController::class, 'logueado'])
+->middleware('auth', 'verified')->name('logueado');*/
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

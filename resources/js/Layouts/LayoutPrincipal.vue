@@ -9,7 +9,7 @@ import { Link } from "@inertiajs/vue3";
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <!-- Logo de la pagina -->
             <Link :href="route('/')" class="flex items-center">
-                <img src="/images/logo.png" class="h-14" alt="Logo FilmXtra" />
+                <img src="../imagenes/logo.png" class="h-14" alt="Logo FilmXtra" />
             </Link>
             <!-- Boton de buscar -->
             <div class="flex md:order-2">

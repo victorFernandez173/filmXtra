@@ -40,6 +40,10 @@ class MainController extends Controller
         ]);
     }
 
+    public function logueado(){
+        return Inertia::render('Logueado');
+    }
+
     /**
      * @throws Exception
      */
