@@ -18,7 +18,7 @@ defineProps({
 const user = usePage().props.auth.user;
 /*Valores del usuario insertados en formulario*/
 const form = useForm({
-    nombre: user.nombre,
+    name: user.name,
     email: user.email,
 });
 </script>
@@ -29,25 +29,25 @@ const form = useForm({
             <h2 class="text-lg font-medium text-gray-900">Profile Information</h2>
 
             <p class="mt-1 text-sm text-gray-600">
-                Update your account's profile information and email address.
+               Actualiza tu información de perfil y dirección de email
             </p>
         </header>
 
         <form @submit.prevent="form.patch(route('profile.update'))" class="mt-6 space-y-6">
             <div>
-                <InputLabel for="nombre" value="Nombre" />
+                <InputLabel for="name" value="Name" />
 
                 <TextInput
-                    id="nombre"
+                    id="name"
                     type="text"
                     class="mt-1 block w-full"
-                    v-model="form.nombre"
+                    v-model="form.name"
                     required
                     autofocus
-                    autocomplete="nombre"
+                    autocomplete="name"
                 />
 
-                <InputError class="mt-2" :message="form.errors.nombre" />
+                <InputError class="mt-2" :message="form.errors.name" />
             </div>
 
             <div>
