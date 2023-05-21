@@ -43,6 +43,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     const CREATED_AT = 'creado';
     const UPDATED_AT = 'modificado';
+    /*public $timestamps = false;*/
 
 
     /**

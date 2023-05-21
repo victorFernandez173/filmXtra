@@ -9,6 +9,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -31,6 +32,7 @@ class RegisteredUserController extends Controller
      */
     public function store(UserRegisterRequest $request): RedirectResponse | Response
     {
+        /*$request->session()->regenerate();*/
         $validated = $request->validated();
 
         $user = User::create([
@@ -40,8 +42,16 @@ class RegisteredUserController extends Controller
         ]);
 
         event(new Registered($user));
+        /*$request->session()->keep($user);*/ //NO PONER ESTA LÍNEA
 
-        Auth::login($user);
+        session(['user' => $user]);
+        error_log('99999999999999999999');
+        error_log(session('user'));
+        error_log('99999999999999999999');
+        /*Session::put($user);*/
+        /*session('user', $user);*/
+        /*Auth::$user();*/
+        /*Auth::login($user);*/
         return redirect('verify-email');
     }
 }

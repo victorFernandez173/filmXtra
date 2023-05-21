@@ -30,11 +30,15 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
-        $request->authenticate();
+        /*$request->authenticate();
 
-        $request->session()->regenerate();
+        $request->session()->regenerate();*/
 
-        if($request->user()->hasVerifiedEmail()){
+        /*if($request->user()->hasVerifiedEmail()){
+            return redirect()->intended(RouteServiceProvider::HOME);
+        }*/
+        if(session('user')->hasVerifiedEmail()){
+            Auth::login(session('user'));
             return redirect()->intended(RouteServiceProvider::HOME);
         }
         return redirect('verify-email');

@@ -34,9 +34,10 @@ class AuthServiceProvider extends ServiceProvider
 
         VerifyEmail::toMailUsing(function ($notifiable, $url) {
             return (new MailMessage)
-                ->subject('Verifica el email Victor palurdo')
-                ->line('Click the button below to verify your email address.')
-                ->action('Verify Email Address', $url);
+                ->subject('Correo de validación FlmXtra !')
+                ->line('Pincha aquí abajo para verificar tu correo y así poder compartir tu
+                 opinión con otro muchos usuarios ! ')
+                ->action('QUIERO DISFRUTAR !', $url);
         });
     }
 }
