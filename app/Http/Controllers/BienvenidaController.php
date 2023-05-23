@@ -33,8 +33,8 @@ class BienvenidaController extends Controller
      */
     public function bienvenida(){
         return Inertia::render('Welcome', [
-            'canLogin' => Route::has('login'),
-            'canRegister' => Route::has('register'),
+            /*'canLogin' => Route::has('login'),
+            'canRegister' => Route::has('register'),*/
             'obras' => Obra::with('poster')->find($this->obtenerDoceObrasAleatorias())
         ]);
     }

@@ -46,7 +46,7 @@ class RegisteredUserController extends Controller
 
         session(['user' => $user]);
         error_log('99999999999999999999');
-        error_log(session('user'));
+        /*dd(session()->all());*/
         error_log('99999999999999999999');
         /*Session::put($user);*/
         /*session('user', $user);*/

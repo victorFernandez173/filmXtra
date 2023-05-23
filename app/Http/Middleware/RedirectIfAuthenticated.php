@@ -15,12 +15,18 @@ class RedirectIfAuthenticated
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next, string ...$guards): Response
+    public function handle(Request $request, Closure $next, /*string*/ ...$guards): Response
     {
+        error_log('77777777777777777');
+        error_log($request);
+        error_log('77777777777777777');
+        /*dd(session()->all());*/
         $guards = empty($guards) ? [null] : $guards;
-
+        /*dd($request);*/
+        error_log('HOLAAAAAAAAAAAAAAAA');
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
+                /*dd(Auth::guard($guard)->check());*/
                 return redirect(RouteServiceProvider::HOME);
             }
         }

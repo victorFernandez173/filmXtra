@@ -17,7 +17,7 @@ use Laravel\Sanctum\HasApiTokens;
  * Class User
  *
  * @property int $id
- * @property string $name
+ * @property string|null $name
  * @property string|null $apellido
  * @property Carbon|null $edad
  * @property string|null $pais
@@ -52,6 +52,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array<int, string>
      */
     protected $fillable = [
+        'id',
         'name',
         'apellido',
         'edad',

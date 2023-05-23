@@ -5,6 +5,8 @@ namespace App\Http\Requests\Auth;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
@@ -17,6 +19,8 @@ class LoginRequest extends FormRequest
      */
     public function authorize(): bool
     {
+        error_log('AUTHORIZE');
+        /*dd();*/
         return true;
     }
 
@@ -27,6 +31,8 @@ class LoginRequest extends FormRequest
      */
     public function rules(): array
     {
+        error_log('RULES');
+        /*dd();*/
         return [
             'email' => ['required', 'string', 'email'],
             'password' => ['required', 'string'],
@@ -39,6 +45,8 @@ class LoginRequest extends FormRequest
      */
     public function messages(): array
     {
+        error_log('MESSAGES');
+        /*dd();*/
         return [
             'email.required' => 'Introduzca email',
             'email.email' => 'Formato de email',
@@ -53,14 +61,21 @@ class LoginRequest extends FormRequest
      */
     public function authenticate(): void
     {
-        $this->ensureIsNotRateLimited();
-
-        if (! Auth::attempt($this->only('email', 'password')/*, $this->inputType, 'password')*/, $this->boolean('remember'))) {
+        error_log('AUTHENTICATE');
+        /*dd();*/
+        //$this->ensureIsNotRateLimited();
+        /*dd(Auth::attempt($this->only('email', 'password')));*/
+        //$2y$10$s2ZrwKVY9z1BIR/n76JbSOVv2BJLB.qAsyYwyzG7F4KcsLH6smlIa
+        $user = DB::table('users')->where('email', $this->email)->first();
+        /*dd(Hash::check($this->password, $user->password));*/
+        if(!Hash::check($this->password, $user->password)){
+        //if (!Auth::attempt($this->only('email', 'password'), /*$this->inputType, 'password'),*/ $this->boolean('remember'))) {
         /*if (!Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {*/
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
-                'email' => trans('auth.failed'),
+                'email' => trans('errorrrrrr'),
+                'password' => trans('fallo')
             ]);
         }
 
@@ -74,6 +89,8 @@ class LoginRequest extends FormRequest
      */
     public function ensureIsNotRateLimited(): void
     {
+        error_log('ENSURE IS NOT RATE LIMITED');
+        /*dd();*/
         if (!RateLimiter::tooManyAttempts($this->throttleKey(), 5)) {
             return;
         }
@@ -95,6 +112,8 @@ class LoginRequest extends FormRequest
      */
     public function throttleKey(): string
     {
+        error_log('THROTTLEKEY');
+        /*dd();*/
         return Str::transliterate(Str::lower($this->input('email')) . '|' . $this->ip());
     }
 }
