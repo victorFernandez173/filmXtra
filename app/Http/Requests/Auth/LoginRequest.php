@@ -34,7 +34,7 @@ class LoginRequest extends FormRequest
         error_log('RULES');
         /*dd();*/
         return [
-            'email' => ['required', 'string', 'email'],
+            'email' => ['required', 'email'],
             'password' => ['required', 'string'],
         ];
     }
@@ -48,9 +48,9 @@ class LoginRequest extends FormRequest
         error_log('MESSAGES');
         /*dd();*/
         return [
-            'email.required' => 'Introduzca email',
-            'email.email' => 'Formato de email',
-            'password' => 'Introduzca contraseña'
+            'email.email' => 'Formato de email inválido',
+            'password.required' => 'Introduzca contraseña',
+            'password.string' => 'Formato de contraseña inválido',
         ];
     }
 

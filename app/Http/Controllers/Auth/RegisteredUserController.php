@@ -3,16 +3,17 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\UserRegisterRequest;
+use App\Http\Requests\Auth\RegisterRequest;
 use App\Models\User;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
 use Inertia\Response;
+use Redirect;
 
 
 class RegisteredUserController extends Controller
@@ -22,6 +23,8 @@ class RegisteredUserController extends Controller
      */
     public function create(): Response
     {
+        Redirect::setIntendedUrl(url()->previous());
+
         return Inertia::render('Auth/Register');
     }
 
@@ -30,28 +33,29 @@ class RegisteredUserController extends Controller
      *
      * @throws ValidationException
      */
-    public function store(UserRegisterRequest $request): RedirectResponse | Response
+    public function store(RegisterRequest $request): RedirectResponse
     {
-        /*$request->session()->regenerate();*/
         $validated = $request->validated();
 
         $user = User::create([
             'name' => $validated['name'],
             'email' => $validated['email'],
-            'password' => Hash::make($validated['password'])
+            'password' => Hash::make($validated['password']),
         ]);
 
         event(new Registered($user));
-        /*$request->session()->keep($user);*/ //NO PONER ESTA LÍNEA
 
-        session(['user' => $user]);
+        Auth::login($user);
+
+        return redirect()->intended(RouteServiceProvider::HOME);
+        /*session(['user' => $user]);
         error_log('99999999999999999999');
-        /*dd(session()->all());*/
+        dd(session()->all());
         error_log('99999999999999999999');
-        /*Session::put($user);*/
-        /*session('user', $user);*/
-        /*Auth::$user();*/
-        /*Auth::login($user);*/
-        return redirect('verify-email');
+        session::put($user);
+        session('user', $user);
+        Auth::$user();
+        Auth::login($user);
+        return redirect('verify-email');*/
     }
 }

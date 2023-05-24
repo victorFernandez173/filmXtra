@@ -30,24 +30,26 @@ class NewPasswordController extends Controller
     /**
      * Handle an incoming new password request.
      *
-     * @throws \Illuminate\Validation\ValidationException
+     * @throws ValidationException
      */
     public function store(Request $request): RedirectResponse
     {
-        $request->validate([
-            'token' => 'required',
-            'email' => 'required|email',
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+        $request->validate(
+            [
+                'token' => 'required',
+                'email' => 'required|email',
+                'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            ],
+            [
+                'token.required' => 'No tiene token, imposible proceder', 'email.required' => 'Inserte email', 'email.email' => 'Formato de email incorrecto', 'password.required' => 'Inserte password', 'password.confirmed' => 'Confirmacion de password fallida', 'password.min' => 'Al menos 8 caracteres para su password'
+            ]);
 
-        // Here we will attempt to reset the user's password. If it is successful we
-        // will update the password on an actual user model and persist it to the
-        // database. Otherwise we will parse the error and return the response.
+        // Para resetear el password del usario. Si hay éxito, se modificará el password de un usuario de forma persistente también en la bbdd. Sino, se devolverá el error.
         $status = Password::reset(
             $request->only('email', 'password', 'password_confirmation', 'token'),
             function ($user) use ($request) {
                 $user->forceFill([
-                    'password' => Hash::make($request->password),
+                    'password' => Hash::make($request['password']),
                     'remember_token' => Str::random(60),
                 ])->save();
 

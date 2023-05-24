@@ -10,20 +10,18 @@ export default {
 <script setup>
 import { Head } from "@inertiajs/vue3";
 import Carrusel from "../Components/Carrusel.vue";
-import { initFlowbite } from 'flowbite'
-import { onMounted } from "vue";
 import Poster from "../Components/Poster.vue";
+import {onMounted} from "vue";
+import {initCarousels} from "flowbite";
 
-// Para montar componentes Flowbite
 onMounted(() => {
-    initFlowbite();
+    initCarousels();
 })
 
 defineProps(['obras']);
 </script>
 
 <template>
-    <!--  TODO revisar la responsividad: tamaños de fuente, anchura barra lateral...   -->
     <Head>
         <title>Inicio</title>
         <meta name="description" content="Página de bienvenida">
@@ -37,7 +35,7 @@ defineProps(['obras']);
         <div
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 seccion-peliculas text-center w-full justify-items-center">
             <!-- Cada poster es un componente -->
-            <Poster v-for="obra in obras" :key="obra['id']" :obra="obra" :titulo="`text-2xl hover:text-xl`" />
+            <Poster v-for="obra in obras" :obra="obra" :titulo="`text-2xl hover:text-xl`" />
         </div>
     </div>
 </template>

@@ -1,5 +1,12 @@
 <script setup>
 import { Link } from "@inertiajs/vue3";
+import {onMounted} from "vue";
+import {initFlowbite} from "flowbite";
+
+// Para montar componentes Flowbite
+onMounted(() => {
+    initFlowbite();
+})
 </script>
 
 <template>
@@ -11,7 +18,6 @@ import { Link } from "@inertiajs/vue3";
             <Link :href="route('/')" class="flex items-center">
                 <img src="../imagenes/logo.png" class="h-14" alt="Logo FilmXtra" />
             </Link>
-            <!-- Boton de buscar TODO falta rematar estilos boton búsqueda-->
             <div class="flex justify-end md:order-2">
                 <button type="button" data-collapse-toggle="navbar-search"  aria-controls="navbar-search" aria-expanded="false" class="lg:hidden text-gray-500  hover:bg-gray-100  focus:outline-none focus:ring-4 focus:ring-gray-200  rounded-lg text-sm p-2.5 mr-1" >
                     <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
@@ -32,7 +38,7 @@ import { Link } from "@inertiajs/vue3";
                     <img class="w-8 h-8 rounded-full" src="/favicon.png" alt="Foto del usuario">
                 </button>
                 <!-- Menu de usuario desplegable -->
-                <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow" id="user-dropdown">
+                <div class="z-50 hidden  text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow" id="user-dropdown">
                     <div class="px-4 py-3">
                         <span class="block text-sm text-gray-900">FilmXtra</span>
                         <span v-if="$page.props.auth.user" class="block text-sm  text-gray-500 truncate">{{ $page.props.auth.user.email }}</span>

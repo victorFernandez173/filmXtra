@@ -27,9 +27,6 @@ use Laravel\Sanctum\HasApiTokens;
  * @property string|null $remember_token
  * @property Carbon $creado
  * @property Carbon $modificado
- * @property string|null $provider
- * @property string|null $provider_id
- * @property string|null $provider_token
  *
  * @property Collection|Critica[] $criticas
  * @property Collection|Evaluacion[] $evaluaciones
@@ -43,7 +40,6 @@ class User extends Authenticatable implements MustVerifyEmail
 
     const CREATED_AT = 'creado';
     const UPDATED_AT = 'modificado';
-    /*public $timestamps = false;*/
 
 
     /**
@@ -52,17 +48,12 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array<int, string>
      */
     protected $fillable = [
-        'id',
         'name',
-        'apellido',
-        'edad',
-        'pais',
+        'username',
+        'age',
+        'country',
         'email',
         'password',
-        'username',
-        'provider',
-        'provider_id',
-        'provider_token'
     ];
 
     /**
@@ -81,7 +72,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array<string, string>
      */
     protected $casts = [
-        'edad' => 'datetime',
+        'age' => 'datetime',
         'creado' => 'datetime',
         'modificado' => 'datetime',
         'email_verified_at' => 'datetime',
@@ -121,6 +112,6 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     public function likes(): BelongsToMany
     {
-        return $this->belongsToMany(Critica::class);
+        return $this->belongsToMany(Like::class, 'likes', 'user_id', 'critica_id', 'id', );
     }
 }

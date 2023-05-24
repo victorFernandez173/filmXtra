@@ -1,9 +1,5 @@
 <?php
 
-/**
- * Created by Reliese Model.
- */
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -22,9 +18,43 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class Like extends Model
 {
-	protected $table = 'likes';
-	public $incrementing = false;
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'likes';
+
+    /**
+     * primaryKey
+     *
+     * @var null
+     * @access protected
+     */
+    protected $primaryKey = null;
+
+    /**
+     * Indicates if the IDs are auto-incrementing.
+     *
+     * @var bool
+     */
+    public $incrementing = false;
+
+    /**
+     * No timestamps
+     * @var bool
+     */
 	public $timestamps = false;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var int[]
+     */
+    protected $fillable = [
+        'user_id',
+        'critica_id',
+    ];
 
     /**
      * Castings

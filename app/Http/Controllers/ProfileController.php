@@ -47,7 +47,7 @@ class ProfileController extends Controller
     {
         $request->validate([
             'password' => ['required', 'current_password'],
-        ]);
+        ], ['password.required' => 'Por favor, el password', 'password.current_password' => 'Revise el password introducido']);
 
         $user = $request->user();
 

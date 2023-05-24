@@ -16,41 +16,12 @@ const submit = () => {
 };
 </script>
 
-<!--<template>
+<template>
     <Head>
         <title>Confirmar password</title>
         <meta name="description" content="Pagina de confirmacion de password">
     </Head>
-
-    <div class="mb-4 text-sm text-gray-600">
-        This is a secure area of the application. Please confirm your password before continuing.
-    </div>
-
-    <form @submit.prevent="submit">
-        <div>
-            <InputLabel for="password" value="Password"/>
-            <TextInput
-                id="password"
-                type="password"
-                class="mt-1 block w-full"
-                v-model="form.password"
-                required
-                autocomplete="current-password"
-                autofocus
-            />
-            <InputError class="mt-2" :message="form.errors.password"/>
-        </div>
-
-        <div class="flex justify-end mt-4">
-            <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                Confirm
-            </PrimaryButton>
-        </div>
-    </form>
-</template>-->
-
-<template>
-    <section class="bg-cover bg-[url('images/posters-fondo.png')]">
+    <section class="bg-cover bg-[url('/images/posters-fondo.png')]">
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
             <Link :href="route('/')" class="flex items-center mb-6 text-2xl font-semibold text-gray-900">
                 <img class="w-60 mr-2" src="/images/logo-blanco.png" alt="Logo FlimXtra">
@@ -60,8 +31,8 @@ const submit = () => {
                     <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
                         Confirmación de la contraseña
                     </h1>
-                    <h3 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
-                        Esta área es segura. Por favor, confirme su contraseña antes de continuar.
+                    <h3 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-lg">
+                        Área segura. Por favor, confirme su contraseña antes de continuar.
                     </h3>
                     <form class="space-y-4 md:space-y-6" @submit.prevent="submit">
                         <div>

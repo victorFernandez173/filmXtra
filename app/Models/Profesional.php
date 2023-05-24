@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int $medio_id
  * @property string $autor
  * @property string $contenido
+ * @property Carbon $fecha
  * @property Carbon $creada
  * @property Carbon $modificada
  *
@@ -35,6 +36,7 @@ class Profesional extends Model
     protected $casts = [
         'obra_id' => 'int',
         'medio_id' => 'int',
+        'fecha' => 'date',
         'creada' => 'datetime',
         'modificada' => 'datetime'
     ];
@@ -49,6 +51,7 @@ class Profesional extends Model
         'medio_id',
         'autor',
         'contenido',
+        'fecha'
     ];
 
     /**

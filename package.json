@@ -21,6 +21,7 @@
         "@headlessui/vue": "^1.7.13",
         "@heroicons/vue": "^2.0.18",
         "dayjs": "^1.11.7",
-        "flowbite": "^1.6.5"
+        "flowbite": "^1.6.5",
+        "sweetalert2": "^11.7.5"
     }
 }

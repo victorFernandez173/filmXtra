@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use DB;
 use Inertia\Inertia;
-use App\Models\Obra;
-use Illuminate\Support\Facades\Route;
 use Exception;
 
 class BienvenidaController extends Controller
@@ -33,29 +31,7 @@ class BienvenidaController extends Controller
      */
     public function bienvenida(){
         return Inertia::render('Welcome', [
-            /*'canLogin' => Route::has('login'),
-            'canRegister' => Route::has('register'),*/
-            'obras' => Obra::with('poster')->find($this->obtenerDoceObrasAleatorias())
+            'obras' => DB::table('obras')->select('obras.titulo', 'p.ruta', 'p.alt')->join('posters AS p', 'obras.id', '=', 'p.obra_id')->whereIn('obras.id', $this->obtenerDoceObrasAleatorias())->get()
         ]);
     }
-
-    /*public function logueado(){
-        return Inertia::render('Logueado');
-    }
-
-    /**
-     * @throws Exception
-     */
-    
-    /*public function fichaPelicula($titulo){
-        $titulo = str_replace('_', ' ', $titulo);
-
-        return Inertia::render('Obra', [
-            'canLogin' => Route::has('login'),
-            'canRegister' => Route::has('register'),
-            'obra' => Obra::with(['poster', 'secuelas:saga_id,obra_id,orden', 'criticas', 'evaluaciones:obra_id,user_id,evaluacion', 'directors:nombre,edad,defuncion,pais', 'festivals:obra_id,nombre,edicion', 'profesionals:obra_id,medio_id,autor,web,contenido', 'actors:nombre,nombre_real,edad,defuncion,pais', 'generos:genero'])->where('titulo', '=', "$titulo")->get()]);
-    }*/
-
-
-
 }

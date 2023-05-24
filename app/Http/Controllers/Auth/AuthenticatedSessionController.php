@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Inertia\Response;
+use Redirect;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -22,6 +23,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): Response
     {
+        Redirect::setIntendedUrl(url()->previous());
         return Inertia::render('Auth/Login', [
             'canResetPassword' => Route::has('password.request'),
             'status' => session('status'),
@@ -83,6 +85,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect(url()->previous());
     }
 }

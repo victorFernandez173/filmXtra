@@ -20,57 +20,24 @@ const submit = () => {
 };
 </script>
 
-<!--<template>
+<template>
     <Head>
         <title>Password olvidado</title>
         <meta name="description" content="Página de password olvidado">
     </Head>
-
-    <div class="mb-4 text-sm text-gray-600">
-        Forgot your password? No problem. Just let us know your email address and we will email you a password reset
-        link that will allow you to choose a new one.
-    </div>
-
-    <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
-        {{ status }}
-    </div>
-
-    <form @submit.prevent="submit">
-        <div>
-            <InputLabel for="email" value="Email"/>
-
-            <TextInput
-                id="email"
-                type="email"
-                class="mt-1 block w-full"
-                v-model="form.email"
-                required
-                autofocus
-                autocomplete="username"
-            />
-
-            <InputError class="mt-2" :message="form.errors.email"/>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                Email Password Reset Link
-            </PrimaryButton>
-        </div>
-    </form>
-</template>-->
-
-<template>
-    <section class="bg-cover bg-[url('images/posters-fondo.png')]">
+    <section class="bg-cover bg-[url('/images/posters-fondo.png')]">
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
             <Link :href="route('/')" class="flex items-center mb-6 text-2xl font-semibold text-gray-900">
                 <img class="w-60 mr-2" src="/images/logo-blanco.png" alt="Logo FlimXtra">
             </Link>
             <div class="w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
                 <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                    <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
+                    <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-xl">
                         ¿Has olvidado tu contraseña?
                     </h1>
+                    <h3 class="text-xl font-normal leading-tight tracking-tight text-gray-900 md:text-lg">
+                        Introduce tu email y te enviaremos un link para reiniciar la contraseña.
+                    </h3>
                     <form class="space-y-4 md:space-y-6" @submit.prevent="submit">
                         <div>
                             <InputLabel for="email" value="Correo electrónico" class="block mb-2 text-sm font-medium text-gray-900" />
@@ -86,7 +53,7 @@ const submit = () => {
                             <InputError class="mt-2" :message="form.errors.email"/>
                         </div>
                         <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                            Acceder
+                            Enviar email
                         </PrimaryButton>
                     </form>
                 </div>

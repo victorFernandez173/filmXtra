@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\ProviderController;
 use Inertia\Inertia;
 use App\Http\Controllers\BienvenidaController;
 use App\Http\Controllers\ObtenerObraController;
+use App\Http\Controllers\LikeController;
 
 
 /*
@@ -22,12 +23,13 @@ use App\Http\Controllers\ObtenerObraController;
 */
 
 
-/*Route::get('/', [MainController::class, 'bienvenida'])->name('/');*/
 Route::get('/', [BienvenidaController::class, 'bienvenida'])->name('/');
 
 Route::get('obra/{titulo}', [ObtenerObraController::class, 'fichaPelicula'])->name('obra');
 
 Route::get('/obras', [FiltrarObrasController::class, 'cargaDatos'])->name('obras');
+
+Route::post('/like', [LikeController::class, 'darLike'])->name('darLike');
 
 Route::get('/auth/{provider}/redirect', [ProviderController::class, 'redirect'])->name('redirect');
 Route::get('/auth/{provider}/callback', [ProviderController::class, 'callback'])->name('callback');

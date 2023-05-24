@@ -22,9 +22,43 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class GeneroObra extends Model
 {
-	protected $table = 'genero_obra';
-	public $incrementing = false;
-	public $timestamps = false;
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'genero_obra';
+
+    /**
+     * primaryKey
+     *
+     * @var null
+     * @access protected
+     */
+    protected $primaryKey = null;
+
+    /**
+     * Indicates if the IDs are auto-incrementing.
+     *
+     * @var bool
+     */
+    public $incrementing = false;
+
+    /**
+     * No timestamps
+     * @var bool
+     */
+    public $timestamps = false;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var int[]
+     */
+    protected $fillable = [
+        'obra_id',
+        'genero_id',
+    ];
 
     /**
      * Castings

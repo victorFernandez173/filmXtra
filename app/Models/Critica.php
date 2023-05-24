@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * Class Critica
@@ -71,8 +71,8 @@ class Critica extends Model
     /**
      * Get the likes that belong to the user.
      */
-    public function likes(): HasMany
+    public function likes(): BelongsToMany
     {
-        return $this->hasMany(Critica::class);
+        return $this->belongsToMany(Like::class, 'likes', 'critica_id', 'user_id', 'id');
     }
 }
