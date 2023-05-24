@@ -48,14 +48,6 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         return redirect()->intended(RouteServiceProvider::HOME);
-        /*session(['user' => $user]);
-        error_log('99999999999999999999');
-        dd(session()->all());
-        error_log('99999999999999999999');
-        session::put($user);
-        session('user', $user);
-        Auth::$user();
-        Auth::login($user);
-        return redirect('verify-email');*/
+        /*return redirect('verify-email');*/
     }
 }

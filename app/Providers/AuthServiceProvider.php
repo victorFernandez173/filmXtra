@@ -21,7 +21,7 @@ class AuthServiceProvider extends ServiceProvider
 
     /**
      * Register any authentication / authorization services.
-     * 
+     *
      * @return void
      */
     public function boot()
@@ -34,9 +34,10 @@ class AuthServiceProvider extends ServiceProvider
 
         VerifyEmail::toMailUsing(function ($notifiable, $url) {
             return (new MailMessage)
-                ->subject('Correo de validación FlmXtra !')
+                ->subject('Correo de validación FilmXtra !')
                 ->line('Pincha aquí abajo para verificar tu correo y así poder compartir tu
-                 opinión con otro muchos usuarios ! ')
+                tu pasión por el cine con muchos usuarios ! ')
+                ->greeting('Bienvenido a filmXtra:')
                 ->action('QUIERO DISFRUTAR !', $url);
         });
     }
