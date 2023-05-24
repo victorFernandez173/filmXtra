@@ -68,18 +68,25 @@ class LoginRequest extends FormRequest
         //$2y$10$s2ZrwKVY9z1BIR/n76JbSOVv2BJLB.qAsyYwyzG7F4KcsLH6smlIa
         $user = DB::table('users')->where('email', $this->email)->first();
         /*dd(Hash::check($this->password, $user->password));*/
-        if(!Hash::check($this->password, $user->password)){
-        //if (!Auth::attempt($this->only('email', 'password'), /*$this->inputType, 'password'),*/ $this->boolean('remember'))) {
-        /*if (!Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {*/
-            RateLimiter::hit($this->throttleKey());
+        if($user != null){
+            if(!Hash::check($this->password, $user->password)){
+            //if (!Auth::attempt($this->only('email', 'password'), /*$this->inputType, 'password'),*/ $this->boolean('remember'))) {
+            /*if (!Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {*/
+                RateLimiter::hit($this->throttleKey());
 
+                throw ValidationException::withMessages([
+                    'email' => trans('eeeeeeeee'),
+                    'password' => trans('contraseña incorrecta')
+                ]);
+            }
+        }else{
             throw ValidationException::withMessages([
-                'email' => trans('errorrrrrr'),
-                'password' => trans('fallo')
+                'email' => trans('email incorrecto'),
+                'password' => trans('contraseña incorrecta')
             ]);
         }
 
-        RateLimiter::clear($this->throttleKey());
+            RateLimiter::clear($this->throttleKey());
     }
 
     /**

@@ -45,9 +45,8 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        Auth::login($user);
+        session(['user' => $user]);
 
-        return redirect()->intended(RouteServiceProvider::HOME);
-        /*return redirect('verify-email');*/
+        return redirect('verify-email');
     }
 }
