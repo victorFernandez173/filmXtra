@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Evaluacion;
+use App\Models\Trailer;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,16 +12,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('evaluaciones', function (Blueprint $table) {
-            $table->id();
+        Schema::create('trailers', function (Blueprint $table) {
             $table->foreignId('obra_id')->constrained();
-            $table->foreignId('user_id')->constrained();
-            $table->decimal('evaluacion',3, 1, true);
+            $table->string('trailers', 500)->nullable();
 
-            $table->timestamp(Evaluacion::CREATED_AT)->useCurrent();
-            $table->timestamp(Evaluacion::UPDATED_AT)->useCurrent();
+            $table->timestamp(Trailer::CREATED_AT)->useCurrent();
+            $table->timestamp(Trailer::UPDATED_AT)->useCurrent();
 
-            $table->unique(['obra_id', 'user_id']);
+            $table->primary('obra_id');
 
             $table->engine = 'InnoDB';
             $table->charset = 'utf8mb4';
@@ -34,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('evaluaciones');
+        Schema::dropIfExists('trailers');
     }
 };

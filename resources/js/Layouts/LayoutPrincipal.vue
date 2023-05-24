@@ -79,10 +79,10 @@ onMounted(() => {
                         <Link :href="route('/')" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0">Inicio</Link>
                     </li>
                     <li>
-                        <Link :href="route('obras')" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0">Películas</Link>
+                        <Link :href="route('top')" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0">Top filmXtra</Link>
                     </li>
                     <li>
-                        <Link href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 ">Valoraciones</Link>
+                        <Link :href="route('valoraciones')" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 ">Valoraciones</Link>
                     </li>
                     <li>
                         <Link :href="route('profile.edit')" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0">Cuenta</Link>
@@ -113,10 +113,10 @@ onMounted(() => {
                                 <Link :href="route('/')">FilmXtra</Link>
                             </li>
                             <li class="mb-4">
-                                <Link :href="route('obras')">Películas</Link>
+                                <Link :href="route('top')">top filmXtra</Link>
                             </li>
                             <li class="mb-4">
-                                <Link href="#">Valoraciones</Link>
+                                <Link :href="route('valoraciones')">Valoraciones</Link>
                             </li>
                             <li class="mb-4">
                                 <Link href="#">Cuenta</Link>

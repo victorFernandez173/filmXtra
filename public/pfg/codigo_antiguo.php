@@ -93,7 +93,7 @@ const form = useForm({
 });
 
 const submit = () => {
-    form.get(route('obras'), {preserveState : true});
+    form.get(route('top'), {preserveState : true});
 };
 
 const props = defineProps({
@@ -142,7 +142,7 @@ const annoActual = (new Date().getFullYear() + 1);
             <PrimaryButton :disabled="form.processing" :class="{ 'opacity-25': form.processing }">FILTRA</PrimaryButton>
         </div>
         <div class="w-[48%] flex m-auto">
-            <Link class="w-full m-auto text-white bg-flamingo hover:text-black focus:bg-flamingo focus:ring-flamingo focus:border-flamingo focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"  :href="route('obras')">RESET</Link>
+            <Link class="w-full m-auto text-white bg-flamingo hover:text-black focus:bg-flamingo focus:ring-flamingo focus:border-flamingo focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center"  :href="route('top')">RESET</Link>
         </div>
     </div>
 </div>

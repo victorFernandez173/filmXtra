@@ -14,6 +14,8 @@ import {Head, Link} from "@inertiajs/vue3";
 import Poster from "../Components/Poster.vue";
 /* Sweetalert2 */
 import Swal from "sweetalert2";
+import Estrellitas from "../Components/Estrellitas.vue";
+import Trailers from "../Components/Trailers.vue";
 
 const props = defineProps({
     obra: Object,
@@ -98,10 +100,10 @@ const generos = props.obra[0]['generos'];
 const generosProcesados = procesarGeneros(generos);
 
 // Coloreado de los likes
-function procesarGustadas($usuario, $gustadas){
-   let objetoGustadas = Object.values($gustadas['gustadaPor']);
+function procesarGustadas($usuario, $gustadas) {
+    let objetoGustadas = Object.values($gustadas['gustadaPor']);
     let gustadaPorArray = []
-    for (const user_id in objetoGustadas){
+    for (const user_id in objetoGustadas) {
         let valor = Object.values(objetoGustadas[user_id]);
         gustadaPorArray.push(valor[0]);
     }
@@ -122,72 +124,7 @@ function procesarGustadas($usuario, $gustadas){
             <div class="flex justify-start flex-col m-auto h-[100%] w-[90%]">
                 <img :src="'../posters/' + obra[0]['poster']['ruta']" :alt="obra[0].poster.alt">
                 <!--Puntuacion-->
-                <div class="flex justify-center mt-2">
-                    <div class="flex items-center mt-2 text-yellow-300 m-auto">
-                        <svg aria-hidden="true" class="w-7 h-7"
-                             :fill="mediaEvaluaciones >= 0.5 ? 'currentColor' : 'grey'" viewBox="0 0 20 20"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                        </svg>
-                        <svg aria-hidden="true" class="w-7 h-7"
-                             :fill="mediaEvaluaciones >= 1.5 ? 'currentColor' : 'grey'" viewBox="0 0 20 20"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                        </svg>
-                        <svg aria-hidden="true" class="w-7 h-7"
-                             :fill="mediaEvaluaciones >= 2.5 ? 'currentColor' : 'grey'" viewBox="0 0 20 20"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                        </svg>
-                        <svg aria-hidden="true" class="w-7 h-7"
-                             :fill="mediaEvaluaciones >= 3.5 ? 'currentColor' : 'grey'" viewBox="0 0 20 20"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                        </svg>
-                        <svg aria-hidden="true" class="w-7 h-7"
-                             :fill="mediaEvaluaciones >= 4.5 ? 'currentColor' : 'grey'" viewBox="0 0 20 20"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                        </svg>
-                        <svg aria-hidden="true" class="w-7 h-7"
-                             :fill="mediaEvaluaciones >= 5.5 ? 'currentColor' : 'grey'" viewBox="0 0 20 20"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                        </svg>
-                        <svg aria-hidden="true" class="w-7 h-7"
-                             :fill="mediaEvaluaciones >= 6.5 ? 'currentColor' : 'grey'" viewBox="0 0 20 20"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                        </svg>
-                        <svg aria-hidden="true" class="w-7 h-7"
-                             :fill="mediaEvaluaciones >= 7.5 ? 'currentColor' : 'grey'" viewBox="0 0 20 20"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                        </svg>
-                        <svg aria-hidden="true" class="w-7 h-7"
-                             :fill="mediaEvaluaciones >= 8.5 ? 'currentColor' : 'grey'" viewBox="0 0 20 20"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                        </svg>
-                        <svg aria-hidden="true" class="w-7 h-7"
-                             :fill="mediaEvaluaciones >= 9.5 ? 'currentColor' : 'grey'" viewBox="0 0 20 20"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                        </svg>
-                        <p class="text-black"> &nbsp;&nbsp; {{ mediaEvaluaciones }}/10
-                            ({{ obra[0]['evaluaciones'].length }} votos)</p>
-                    </div>
-                </div>
+                <Estrellitas :mediaEvaluaciones="mediaEvaluaciones" :obra="obra"/>
             </div>
 
             <!--Datos pelicula-->
@@ -246,7 +183,8 @@ function procesarGustadas($usuario, $gustadas){
                                 class="underline">Saga</span>:
                             </li>
                             <!-- Si solo hay un poster en secuelas, flex justify-center -->
-                            <div v-if="secuelasOrdenadas && secuelasOrdenadas.length <= 1" class="text-center flex justify-center">
+                            <div v-if="secuelasOrdenadas && secuelasOrdenadas.length <= 1"
+                                 class="text-center flex justify-center">
                                 <div v-for="secuela in secuelasOrdenadas" class="w-[80%] sm:w-[100%] md:w-[250px] lg">
                                 <span>
                                 {{
@@ -278,17 +216,17 @@ function procesarGustadas($usuario, $gustadas){
 
         <!--Contenedor criticas-->
         <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-10 mb-15 justify-center bg-flamingo text-white rounded lg:divide-x md:divide-x divide-y">
+            class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10 mb-15 justify-center bg-flamingo text-white rounded lg:divide-x md:divide-x divide-y">
             <!--Criticas-->
-            <div class="pl-10">
+            <div class="py-10 pl-12 lg:col-span-3 md:col-span-2">
                 <!--Titulo-->
                 <ul>
-                    <li v-if="profesionales" class="list-disc font-bold text-black text-xl mt-5">Críticas
+                    <li v-if="profesionales" class="list-disc font-bold text-black text-xl">Críticas
                         profesionales:
                     </li>
                 </ul>
                 <ul>
-                    <!--Primera critica profesional-->
+                    <!--Críticas profesionales-->
                     <li v-for="p in profesionales" class="list-disc ml-5"><span class="font-semibold"><a
                         class="underline hover:text-black" :href="p['web']" target="_blank"
                         href="">{{ p['medio'] }}</a>:</span> {{ p['contenido'] }} <span
@@ -301,7 +239,7 @@ function procesarGustadas($usuario, $gustadas){
                     <li class="list-disc font-bold text-black text-xl mt-3">Críticas de nuestros usuarios:</li>
                 </ul>
                 <ul>
-                    <!--Primera critica-->
+                    <!--Críticas usuarios-->
                     <li v-for="(cri, i) in criticas" class="list-disc ml-5"><span
                         class="underline font-semibold">{{ cri['usuario'][0]['name'] }}</span>: {{ cri['critica'] }}
                         ({{ dayjs(cri['fecha']).fromNow() }}) - Likes: {{ cri['likes'] }}
@@ -311,7 +249,8 @@ function procesarGustadas($usuario, $gustadas){
                               :href="route('darLike')"
                               :data="{ user_id: $page.props.auth.user['id'], critica_id: cri['id_critica'] }"
                               preserveScroll>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" :fill=" procesarGustadas($page.props.auth.user, $page.props.criticas[i]) ? 'black' : 'white'"
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                 :fill=" procesarGustadas($page.props.auth.user, $page.props.criticas[i]) ? 'black' : 'white'"
                                  class="w-5 h-5 inline-block hover:fill-yellow-300">
                                 <path
                                     d="M1 8.25a1.25 1.25 0 112.5 0v7.5a1.25 1.25 0 11-2.5 0v-7.5zM11 3V1.7c0-.268.14-.526.395-.607A2 2 0 0114 3c0 .995-.182 1.948-.514 2.826-.204.54.166 1.174.744 1.174h2.52c1.243 0 2.261 1.01 2.146 2.247a23.864 23.864 0 01-1.341 5.974C17.153 16.323 16.072 17 14.9 17h-3.192a3 3 0 01-1.341-.317l-2.734-1.366A3 3 0 006.292 15H5V8h.963c.685 0 1.258-.483 1.612-1.068a4.011 4.011 0 012.166-1.73c.432-.143.853-.386 1.011-.814.16-.432.248-.9.248-1.388z"/>
@@ -325,66 +264,25 @@ function procesarGustadas($usuario, $gustadas){
                         </svg>
                     </li>
                 </ul>
-                <!--Boton para ver mas valoraciones-->
-                <button v-if="criticas[0]"
-                        class="my-5 m-auto text-flamingo bg-white hover:text-black focus:bg-white focus:ring-flamingo focus:text-flamingo focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5">
-                    Ver más valoraciones &rarr;
-                </button>
                 <p v-if="!criticas[0]" class="py-3">Sin críticas de usuarios todavía. Participa, pon la tuya.</p>
             </div>
 
             <!--Botones para votar y formulario para escribir-->
-            <div>
+            <div class="py-5 px-5">
                 <!--Titulo-->
-                <h3 class="font-bold underline text-black text-xl mt-5 pl-5 text-center">¿Quieres valorar esta
+                <h3 class="font-bold underline text-black text-xl my-5 text-center">¿Quieres valorar esta
                     película?</h3>
-                <!--Formulario para escribir-->
-                <form>
-                    <div class="w-[70%] m-auto mt-4 mb-4 rounded-lg bg-gray-300">
-                        <div class="px-4 py-2 bg-gray-300 rounded-t-lg">
-                            <!--Parte de escribir-->
-                            <label for="comment" class="sr-only">Tu comentario</label>
-                            <textarea id="comment" rows="4"
-                                      class="w-full px-0 text-sm text-gray-900 bg-gray-300 border-0 focus:ring-red-400 focus:border-red-400"
-                                      placeholder="Escribe tu valoración..." required></textarea>
-                            <!--Parte de nota-->
-                            <select name="nota"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-base focus:ring-red-400 focus:border-red-400 block w-full p-2.5">
-                                <option disabled value="">Nota</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                                <option>10</option>
-                            </select>
-                        </div>
-                        <!--Boton enviar valoracion-->
-                        <div class="flex items-center justify-between px-3 py-2 border-t">
-                            <button type="submit"
-                                    class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-flamingo rounded-lg focus:ring-4 focus:ring-flamingo hover:bg-flamingo hover:text-black">
-                                Enviar valoración
-                            </button>
-                        </div>
-                    </div>
-                </form>
+                <h4>En filmXtra queremos que compartas y opines sobre nuestra gran pasión que es el cine por eso puedes:</h4>
+                <ul class="list-disc ml-[20px]">
+                    <li>Evaluar películas (sobre 10)</li>
+                    <li>Hacer críticas más elaboradas de ellas si te gusta entrar en detalles</li>
+                    <li>Dar like a las críticas de otros usuarios </li>
+                </ul>
             </div>
 
         </div>
+        <!-- Componente para el trailer-->
+        <Trailers :obra="obra" />
 
-        <!--1 apartado para el trailer-->
-        <div class="grid grid-cols-1 pt-10">
-            <!--Trailer-->
-            <div class="flex justify-center">
-                <!--                <iframe width="1300" height="600" src="https://www.youtube.com/embed/NaM7nKvX4Es"
-                                        title="YouTube video player"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        allowfullscreen></iframe>-->
-            </div>
-        </div>
     </div>
 </template>

@@ -84,6 +84,14 @@ class Obra extends Model
     }
 
     /**
+     * Get the Trailer object associated with the obra.
+     */
+    public function trailer(): HasOne
+    {
+        return $this->hasOne(Trailer::class);
+    }
+
+    /**
      * Get the críticas for the obra.
      */
     public function criticas(): HasMany
