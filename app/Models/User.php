@@ -38,10 +38,6 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    const CREATED_AT = 'creado';
-    const UPDATED_AT = 'modificado';
-
-
     /**
      * The attributes that are mass assignable.
      *
