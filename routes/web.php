@@ -29,7 +29,7 @@ Route::get('obra/{titulo}', [ObtenerObraController::class, 'fichaPelicula'])->na
 
 Route::get('/obras', [FiltrarObrasController::class, 'cargaDatos'])->name('obras');
 
-Route::post('/like', [LikeController::class, 'darLike'])->name('darLike');
+Route::post('/like', [LikeController::class, 'darLike'])->name('darLike')->middleware(['auth', 'verified']);
 
 Route::get('/auth/{provider}/redirect', [ProviderController::class, 'redirect'])->name('redirect');
 Route::get('/auth/{provider}/callback', [ProviderController::class, 'callback'])->name('callback');
@@ -41,7 +41,7 @@ Route::get('/auth/github/callback', [ProviderController::class, 'callback'])->na
 ->middleware('auth', 'verified')->name('logueado');*/
 
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
