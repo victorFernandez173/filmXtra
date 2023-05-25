@@ -38,7 +38,7 @@ class AuthenticatedSessionController extends Controller
         error_log('VUUUUUUEEEEELTAAAAAA');
         $request->authenticate();
         /*dd($request);*/
-        $request->session()->regenerate();
+        /*$request->session()->regenerate();*/
 
         /*if($request->user()->hasVerifiedEmail()){
             return redirect()->intended(RouteServiceProvider::HOME);
@@ -52,18 +52,19 @@ class AuthenticatedSessionController extends Controller
             /*$user = $request->input();
             dd($user);*/
             /*dd($request->input());*/
-        if($email != null){
+            /*dd($email);*/
+        //if($email != null){
             $user = new User([
                 'id' => $email->id,
                 'email' => $email->email,
                 'password' => Hash::make($email->password)
             ]);
 
-            /*dd($user);*/
+            /*dd($user->getAttributes());*/
             //->getKey()
-            
+            /*dd($user);*/
             session(['user' => $user]);
-            /*dd($request->input());*/
+            /*dd($user->hasVerifiedEmail());*/
             if($user->hasVerifiedEmail()){
                 error_log('TIENE EL MAIL VERIFICADO !');
                 Auth::login(session('user'));
@@ -73,8 +74,7 @@ class AuthenticatedSessionController extends Controller
             error_log('NOOOO TIENE EL MAIL VERIFICADO !');
             /*dd($user->hasVerifiedEmail());*/
             return redirect('verify-email');
-        }
-        return redirect('login');
+        //}
     }
 
     /**
