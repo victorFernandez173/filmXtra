@@ -36,13 +36,12 @@ class Evaluacion extends Model
 
     /**
      * Castings
-     *
      * @var string[]
      */
     protected $casts = [
         'obra_id' => 'int',
         'user_id' => 'int',
-        'evaluacion' => 'float',
+        'evaluacion' => 'int',
     ];
 
     /**
@@ -51,8 +50,8 @@ class Evaluacion extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'obra_id' => 'int',
-        'user_id' => 'int',
+        'obra_id',
+        'user_id',
         'evaluacion',
     ];
 

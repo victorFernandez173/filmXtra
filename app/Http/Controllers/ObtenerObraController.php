@@ -6,6 +6,7 @@ use App\Models\Obra;
 use DB;
 use Exception;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -38,7 +39,7 @@ class ObtenerObraController extends Controller
      * @param $titulo
      * @return \Illuminate\Database\Eloquent\Collection|Builder[]
      */
-    public function obtenerDatosObra($titulo): array|\Illuminate\Database\Eloquent\Collection
+    static function obtenerDatosObra($titulo): array|\Illuminate\Database\Eloquent\Collection
     {
         return Obra::with(['poster', 'secuela:saga_id,obra_id,orden', 'criticas', 'directors:nombre,edad,defuncion,pais', 'festivals:obra_id,nombre,edicion', 'profesionals:obra_id,medio_id,autor,contenido,fecha', 'evaluaciones:obra_id,user_id,evaluacion', 'actors:nombre,nombre_real,edad,defuncion,pais', 'generos:genero', 'trailer'])->where('titulo', '=', "$titulo")->get();
     }
@@ -48,7 +49,7 @@ class ObtenerObraController extends Controller
      * @param $evaluaciones
      * @return float
      */
-    public function calcularMediaEvaluaciones($evaluaciones): float
+    static function calcularMediaEvaluaciones($evaluaciones): float
     {
         $sumatorio = 0;
         foreach ($evaluaciones as $eva) {
@@ -61,11 +62,11 @@ class ObtenerObraController extends Controller
     }
 
     /**
-     * Crea un array con el contenido, likes y fecha de cada critica para la vista a partir de todas las criticas de la película
+     * Crea un array con el contenido, likes y fecha de cada critica para la vista a partir de todas las criticas de la película y devuelve dicha información paginada
      * @param $criticas
-     * @return array
+     * @return LengthAwarePaginator
      */
-    public function obtenerArrayInfoCriticas($criticas): array
+    static function obtenerArrayInfoCriticas($criticas): LengthAwarePaginator
     {
         $criticasLikes = array();
         foreach ($criticas as $critica) {
@@ -79,7 +80,7 @@ class ObtenerObraController extends Controller
                 'gustadaPor' => DB::table('likes')->select('user_id')->where('critica_id', '=', $critica['id'])->get(),
             ];
         }
-        return $criticasLikes;
+        return Paginacion::paginar($criticasLikes, 2);
     }
 
     /**
@@ -127,7 +128,7 @@ class ObtenerObraController extends Controller
      * @return array|null
      * @throws Exception
      */
-    public function obtenerInfoMediosProfesionals($obra): ?array
+    static function obtenerInfoMediosProfesionals($obra): ?array
     {
         if (count($obra[0]['profesionals']) > 0) {
             $arrayProfesionals = array();

@@ -2,7 +2,7 @@
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import SelectConsulta from "./SelectConsulta.vue";
 import {useForm, Link} from '@inertiajs/vue3';
-import SelectRango from "./SelectRango.vue";
+import SelectRangoAnno from "./SelectRangoAnno.vue";
 
 const form = useForm({
     genero: '',
@@ -40,12 +40,12 @@ const annoActual = (new Date().getFullYear() + 1);
                 </SelectConsulta>
             </div>
             <div>
-                <SelectRango :limite-inferior="peliPionera" :limite-superior="annoActual" @emision="(e) => form.desde = e">Desde
-                </SelectRango>
+                <SelectRangoAnno :limite-inferior="peliPionera" :limite-superior="annoActual" @emision="(e) => form.desde = e">Desde
+                </SelectRangoAnno>
             </div>
             <div>
-                <SelectRango :limite-inferior="peliPionera" :limite-superior="annoActual" @emision="(e) => form.hasta = e">Hasta
-                </SelectRango>
+                <SelectRangoAnno :limite-inferior="peliPionera" :limite-superior="annoActual" @emision="(e) => form.hasta = e">Hasta
+                </SelectRangoAnno>
             </div>
 
             <!-- Botones -->

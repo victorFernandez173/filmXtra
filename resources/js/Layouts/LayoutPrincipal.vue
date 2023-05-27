@@ -79,10 +79,10 @@ onMounted(() => {
                         <Link :href="route('/')" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0">Inicio</Link>
                     </li>
                     <li>
-                        <Link :href="route('top')" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0">Top filmXtra</Link>
+                        <Link :href="route('top')" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0">Top FilmXtra</Link>
                     </li>
                     <li>
-                        <Link :href="route('valoraciones')" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 ">Valoraciones</Link>
+                        <Link :href="route('valoraciones')" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0 ">Top Valoraciones</Link>
                     </li>
                     <li>
                         <Link :href="route('profile.edit')" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0">Cuenta</Link>
@@ -113,13 +113,13 @@ onMounted(() => {
                                 <Link :href="route('/')">FilmXtra</Link>
                             </li>
                             <li class="mb-4">
-                                <Link :href="route('top')">top filmXtra</Link>
+                                <Link :href="route('top')">Top FilmXtra</Link>
                             </li>
                             <li class="mb-4">
-                                <Link :href="route('valoraciones')">Valoraciones</Link>
+                                <Link :href="route('valoraciones')">Top Valoraciones</Link>
                             </li>
                             <li class="mb-4">
-                                <Link href="#">Cuenta</Link>
+                                <Link :href="route('profile.edit')">Cuenta</Link>
                             </li>
                         </ul>
                     </div>
@@ -128,7 +128,7 @@ onMounted(() => {
                         <ul class="text-gray-600 font-medium">
                             <li class="mb-4">
                                 <p>
-                                    <Link class="hover:text-flamingo" href="mailto:filmxtra.23@gmail.com" target="_blank" rel="noopener noreferrer">filmxtra.23@gmail.com</Link>
+                                    <Link class="hover:text-flamingo" :href="route('/')">filmxtra.23@gmail.com</Link>
                                 </p>
                             </li>
                             <li>

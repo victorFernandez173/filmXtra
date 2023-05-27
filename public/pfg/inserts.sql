@@ -880,7 +880,131 @@ INSERT INTO criticas (obra_id, user_id, critica) VALUES (1, 7, 'Con Morgan Freem
                                                         (82, 25, 'Una película provocadora y perturbadora que examina la naturaleza de la violencia y la libre voluntad. Con una dirección magistral de Stanley Kubrick y una actuación memorable'),
 
                                                         (83, 5, 'Un épico drama histórico dirigido por Stanley Kubrick, que narra la historia del famoso esclavo y líder rebelde, con una producción impresionante y una actuación destacada de Kirk Douglas.'),
-                                                        (83, 22, 'Un clásico del cine histórico que narra la historia de un esclavo convertido en líder revolucionario. Con una dirección impactante de Stanley Kubrick y un reparto excepcional, encabezado por Kirk Douglas, esta película cautiva con su representación épica de la lucha por la libertad y la justicia.')
+                                                        (83, 22, 'Un clásico del cine histórico que narra la historia de un esclavo convertido en líder revolucionario. Con una dirección impactante de Stanley Kubrick y un reparto excepcional, encabezado por Kirk Douglas, esta película cautiva con su representación épica de la lucha por la libertad y la justicia.'),
+
+                                                        (19, 22, 'La hóstia.
+
+No es que cuente una historia muy interesante ni me parece a mí que tenga moraleja ni segundas lecturas. Se trata trata solamente del viejo cuento sobre un monstruo que se come a la gente...
+
+¡Pero qué pedazo de monstruo! ¡Un prodigio de la xenobiología que nace de un nenúfar baboso, pasa por diversas fases larvales y evoluciona del parasitismo a la depredación, deleitándonos con unas metamorfosis que ya querría para sí Franz Kafka: a) de cangrejo saltarín a parásito intestinal, b) de parásito intestinal a cucaracha atómica y c) de cucaracha atómica a gigante sin ojos pero con doble mandíbula quebrantahuesos, escupiendo babas, sangrando ácidos y persiguiendo una Sigourney Weaver en braguitas por el espacio exterior!
+Encima hay los guiños a los lectores de Joseph Conrad y los malsanos diseños del suizo Hans Rudi Giger que, pese a que fueron retocados y rediseñados mil y una veces hasta despojarlos de cualquier carga sexual, siguen fascinando con esa fascinación oscura de las cosas que en realidad son más feas que pegar a un padre.
+
+Hay tantas películas que la gente califica de "inolvidables" que es difícil acordarse de todas, pero esta vez va en serio: Alien nació en 1979 de la mano de Ridley Scott y desde entonces tiene un lugar de honor en todos nuestros corazoncitos, aunque sólo sea un monstruo de esos que se comen a la gente.
+
+Nota: matrícula de honor.'),
+                                                        (19, 1, 'Algunos tópicos y lugares comunes acerca de Alien:
+
+- Alien es un perfeccionamiento, en lo concerniente a guión y a FX, de It,
+the terror from beyond space (Edward L Cahn, 1958), de Terrore nello spazio (Mario Bava, 1965) y de The green slime (Kinji Fukasaku, 1968).
+
+- La secuencia en la que “nace” el alien fue rodada sin advertir a los actores de lo que iba a ocurrir para conseguir una interpretación de repulsión absolutamente espontánea. Fíjense en Veronica Cartwright (la niña de The birds), su rostro es de verdadera repugnancia.
+
+- Una de las pantallas de ordenador del panel de navegación del Nostromo fue aprovechada por Scott en Blade Runner, que la incorporó al vehículo del detective de la policía Gaff (Edward James Olmos).
+
+- Lo que hace verdaderamente invencible al alien es su inhumanidad. Todas sus víctimas pecan de algún defecto propio de humano: el curioso Kane (John Hurt), el imprudente Brett (Harry Dean Stanton), el osado Dallas (Tom Skerrit), la miedosa Lambert (Cartwright) y el indeciso Parker (Yaphet Koto).
+
+- La criatura (en sus tres fases) fue diseñada por H.R Giger. La criatura en estado adulto o soldado era un traje de caucho y de fibra de vidrio que se enfundaba Bolaji Badejo. Los planos de la cabeza retrataban un “animatronic” (o marioneta mecánica, no confundir con efecto digital) creado por Carlo Rambaldi. Su colega Stan Winston no trabajó en esta película, pero sí en Aliens (James Cameron, 1986), donde creó el enorme “animatronic” de la reina alien.'),
+                                                        (19, 9, 'Un movimiento audaz, un paseo de la mano de una cámara magistralmente manejada y un espacio claustrofóbico, inquietante. Así nació uno de los mayores hitos de la ciencia-ficción: la nave Nostromo.
+La primera secuencia de "Alien" es tan apabullante, que posee el privilegio de ser uno de los mejores arranques que servidor haya visto. Con una sencilla partitura y una transición imponente, lo que se logra durante sus primeros cinco minutos, en los que únicamente hallamos imágen y sonido, nada más, es invitar al espectador no sólo a que se deje llevar a una ficción lejana, sino a que se sume a la propia tripulación, y pase así, a ser uno más. Algo portentoso y muy pocas veces visto.
+
+Sus personajes empiezan a presentarse acto seguido y dejan entrever los roles que desempeñarán en una nave donde puede que el mayor problema vaya a surgir de un cascarón de huevo alienígena, pero en la que la sutileza es un elemento más, y redistribuye constantemente esos roles, consiguiendo que conceptos como mando o necesidad se erijan sin demasiada fuerza, pero con la suficiente inteligencia para poder dar juego a esas personalidades. Y así nacio otro de los mayores hitos de la ciencia-ficción: la teniente Ripley. Una de las primeras heroinas de la historia del cine y, sin embargo, un personaje que en ningún momento hasta su conclusión se alza con todo el protagonismo. De gesto severo y reacciones serias y perspicaces, va emergiendo como esa figura que, pese a levantar suspicacias, sabe como manejar la situación y darle el enfoque preciso.
+
+Conociendo ya la nave Nostromo y su tripulación al completo, el conflicto se desarrolla de un modo viscoso, e incluso los momentos de tensión más acelerada, se suceden con una fría calma que le encoge a uno las mismísimas entrañas. El amerizaje en un planeta desconocido y su posterior inspección, están llevados con un pulso que muy pocos serian capaces de lograr, y hacen de la improvisada visita a esa espeluznante caverna una experiencia irrepetible, que se mueve entre los silencios y sonidos con una maestría innegable, logrando que cada paso de la expedición te haga removerte de inquietud, casi intuyendo que tras el templado sosiego, podría llegar la tormenta en cualquier momento.
+
+Cada cambio de plano, cada introducción a un nuevo espacio, es guiado con uno uso sobrecogedor tanto de sonido como de banda sonora, y es que sin necesidad de estruendo o contundencia, la atmósfera reproducida en base a tonos más o menos leves según esta lo requiera, se erige con una precisión increíble, haciendo de "Alien" una cinta portentosa, en el que estas cualidades salen a relucir como auténticas maestras de la función.'),
+                                                        (19, 24, 'Mis padres son alienígenas.
+
+Yo de pequeña aprobaba todo con sobresalientes y demás. Era una niña encantadora. Ahora tengo mucha mala hostia. Pero ese no es el tema. El caso es que al llegar a casa con todo aprobado de notable para arriba me daban de premio... la película que echasen en la tele ! fuese cual fuese ! hala ! ya podían emitir "Calígula" que yo con 8 añitos lo iba a flipar !
+
+Por eso digo que mis padres son alienígenas.
+
+El caso es que mandaban a mis hermanos a cama (por traer suspensos en las notas) y me dejaban solita viendo la tele. Y en esto que me quedo a oscuras viendo Alien. No llegaría a los 10 años cuando la vi. Traumada que sigo.
+
+En aquel salón a oscuras, con aquel bicho demencial, el joputa de Iam Holm, el miedo que me dio siempre John Hurt (actor al que le va el papel de Wilson, Gran Hermano, en 1984 como anillo al dedo aunque la peli sea un mero intento) y la Sigourney en bragas sudando terror por todos los poros de su piel (en una grandísima interpretación, dicho sea de paso) se consolidaron mis traumas y mi obsesión cinéfila.
+
+Digo, "se consolidaron" porque ya papá me había obligado a ver "Psicopis" en mi tierna infancia, con lo cual, ya estaba yo preparada de sobra cuando vi "Alien, el octavo pasajero" o "El Imperio de los Sentidos" o "Al final de la escalera" y demás premios que le daban a la niña por traer destacas en la libretita de calificaciones del cole. Llegué a tenerles miedo hasta a mis profesores, pavor; no a mis padres que al fin y al cabo son alienígenas. Qué se le va a hacer...
+
+Al lío... Alien, el octavo pasajero combina el mejor género de ciencia ficción con el mejor género de terror. Estamos ante una soberbia producción a la que jamás crecieron enanos o siquiera imitaciones dignas. Posteriores entregas de lo que acabó, lamentablemente por convertirse en una saga, me la traen al pairo. Alien sólo hay uno.
+
+Os lo dice una niña de 10 años, que estudia mucho y saca sobresalientes, que no sabe mentir y a la que le da la risa a carcajadas con Reagan, la niña del exorcista, después de consumir cine de terror indiscriminadamente cuando lo suyo, era ver Barrio Sésamo.
+
+Qué bipolaridad tan tremenda... de noche veía Alien, por el día Barrio Sésamo...
+
+En fin, toda la gente de la generación Alien, Barrio Sésamo y Bola de Cristal está trallada.
+Admitámoslo.'),
+                                                        (19, 29, 'Hace relativamente pocos años la Biblioteca del Congreso estadounidense anunciaba que “Alien, el octavo pasajero” debía de incluirse como monumento a la cultura. Pasaba por tanto a estar en esa exclusiva lista de películas que se hacen copias especiales de seguridad para preservarlas para la posteridad.
+
+Afirmar sobre la trascendencia o no de esta película es complicado, desde luego que si hablamos de cultura popular la tiene y si nos ceñimos a lo meramente cinematográfico mucho más.
+
+Probablemente es el mejor ejemplo de matrimonio entre el terror y la ciencia-ficción que ha deparado el cine. Yo añadiría además el thriller, la película tiene mucho de eso.
+
+La historia está muy vagamente basada en un relato de Conrad, aunque es uno de esos guiones que pasaron por tantas manos que no es fácil decir de quien es hijo. Es verdad que la idea y el primer guión fue de Dan O''Bannon, pero de ahí al final, hubo muchos cambios. Precisamente muchos de ellos fueron obra de Walter Hill, que iba a ser el director, y que le da a la película más ritmo y menos tertulia.
+
+Pero hablar de “Alien” es hacerlo de su factura. Una película de ciencia-ficción, que transcurra en una nave, en el espacio… puede tener más o menos un buen guión pero como no tenga un diseño de producción, unos decorados, unos efectos especiales… todo es trabajo baldío. “Alien” tiene eso y más. Me es imposible recordar una nave mejor hecha que la Nostromo. Y han pasado 30 años. Sobresaliente en todos los apartados técnicos, eso es crear una atmósfera envolvente.
+
+Se nota además que es más europea que americana, rodada íntegramente en decorados en los estudios de Inglaterra, está llena de diseñadores y artistas del viejo continente. Pero lo genial es que es encima es comercial. Y mucho. Si uno puede estudiar detenidamente el guión puede advertir todos los tópicos ya inventados anteriormente. Pero funcionan, y lo hacen porque no hay texto sin contexto. Por eso aunque sean más de una vez ridículos (¿Qué hacen esos tipos detrás de un alien por la nave con una red o abusando del gatito como elemento de suspense?) todo termina por cuadrar en una obra que tiene tanto de superproducción comercial, como de obra personal y de autor.
+
+Encima vaya reparto, con esos actores te puedes ir a otra galaxia que la película te va a funcionar. Maravillosa Sigourney Weaver, con una de la escena erótico-espacial más famosa de la historia del cine.
+
+Dentro de 30 años “Alien” de Ridley Scott seguirá siendo igual de buena, eso seguro.
+
+Nota: 8,4.'),
+                                                        (19, 30, 'Por todos es sabido que Ridley Scott es un director con talento. Dentro de que haya podido tener importantes bajones cualitativos en su extensa filmografía, es innegable que un director que posee en su haber películas ya consideradas clásicos como "Blade Runner", "Alien, El 8º Pasajero" o la entretenida y muy visual "Gladiator", es un cineasta que indudablemente debe poseer alguna virtud. Y algo me dice que ésta no es más que una visión abierta y comprensiva para con el espectador acerca de lo que considera entretenimiento; Conociendo de antemano las preferencias del público y sabiendo conjugar los elementos técnicos con acierto hasta el punto de crear un producto entretenido que con suerte puede alcanzar la atemporalidad. En cada entrevista y con cada nueva película suya Scott no hace más que reafirmarse en que lo único que busca en su carrera es entretener. Desde luego muchas de sus cintas, dentro de sus numerosos altibajos, (que como la mayoría de directores, los tiene) cumplen perfectamente con su objetivo, que es basicamente el de hacer olvidar la triste realidad al personal transportandolo a otras vidas y épocas más distantes.
+Y esta película que nos ocupa no iba a ser menos. Una de las indiscutibles obras maestras, ya no solo de la irregular carrera de su director, sino además de una nefasta época para el cine, situada a finales de los 70 y principios de los 80. Una época en la que el cine no llamó la atención especiamente por sus películones. En ese ambiente de cine mediocre. Surgió un film que aún a día de hoy consigue situarse cómo atemporal. Una película que ha conseguido trascender las barreras del tiempo para situarse como una cinta que ha conseguido mantener sus virtudes y su tenebrosa esencia a traves de los años, como si realmente hubiera sido realizada en pleno siglo XXI. Una particularidad que sin duda solo consiguen las verdaderas buenas películas, las indiscutibles obras maestras y los indudables clásicos modernos. Dentro de los muchos defectos que el Señor Scott pueda poseer (tales como arrogancia o egocentrismo, llegando a reconocer que ninguna de las secuales de Alien han estado a su altura), con esta película, junto con "Blade Runner" y su atmosfera permanentemente lluviosa,
+Ridley consiguió crear escuela y marcar unos estandartes. Porque... ¿Que cinta futurista de hoy día no se presenta o eminentemente tecnificada hasta límites casi utópicos o permanentemente oscura y lluviosa? ¿Qué película de terror psicológico de hoy día no acaba cayendo irremediablemente en el banal intento de copiar y renovar las inquebrantables normas que creó Ridley con su Octavo pasajero? Esta claro que son películas que en el cine moderno y contemporaneo han marcado unos límites que difícilmente se podrán superar e incluso igualar. '),
+                                                        (19, 32, 'Esta película es una maravilla, una obra maestra de la ciencia-ficción y el terror. Dejando de lado sus (totalmente prescindibles) secuelas, ALIEN me parece la reivindicación de la ciencia-ficción oscura y asfixiante como instrumento del miedo. Creo que si alguien ha visto muchas películas inspiradas en esta, no tiene por qué sorprenderse, pero yo no he visto ninguna que iguale a esta precursora.
+
+Lo mejor:
+- El carisma de todos los personajes y el que no quieras que mueran.
+- El terror primitivo que llega a inspirar la criatura: cómo se mueve, cómo se esconde, cómo mata, cómo aprovecha los puntos débiles de cada uno para convertirlos en sus víctimas.
+- La escena improvisada tan famosa... simplemente genial.
+- Su realización: los oscuros, asfixiantes e industriales espacios de la nave Nostromo, la fría oscuridad del planeta y el aspecto de entrañas de bestia de la nave alienígena.
+- Las interpretaciones magníficas, destacando las de Sigourney Weaver, Ian Holm y John Hurt.
+- Lo genial estructurada que está, lo sencilla que es en el fondo, el misterio que la seguirá envolviéndo y su duración.
+- El tráiler.
+- Su versión extendida.
+- La forma en que va apareciéndo el título al principio, formándose las letras.
+
+Lo peor:
+- El absurdo subtítulo de la versión española: "El octavo pasajero". No sé a qué viene semejante idiotez.
+
+CONCLUSIÓN.
+Una película para ver a oscuras y sin ninguna interrupción, recomendada a todos.'),
+                                                        (19, 10, 'Este era el título original que se iba a dar a la que se ha convertido en una de las obras cumbres del género de ciencia ficción. Ridley Scott nos deleita, en tan sólo su segundo trabajo tras la cámaras, con una historia simple, sencilla, pero efectista y compleja a la vez. Una nave espacial, la majestuosa Nostromo, surca el espacio de regreso a la Tierra cuando detecta una transmisión que indica la posible existencia de una forma de vida inteligente...
+
+Sigourney Weaver interpreta el papel de la teniente Ripley, rol que al principio iba a ir destinado a un hombre. Sin embargo el director decidió adjudicárselo tras ver su prueba, convirtiéndola así en la primera heroína de una gran superproducción norteamericana. Entre el resto de tripulantes de la nave las caras más conocidas son las de un joven John Hurt y la del misterioso personaje de Ian Holm.
+
+Lo que encuentran en el planeta dio a la película su único Oscar (a los Mejores Efectos Visuales): un Alien, un extraterrestre cuyo nacimiento a bordo de la nave es ya una de las secuencias más homenajeadas de la historia del cine. Su creación, y sobre todo la estrategia de Scott de nunca mostrarle en su forma completa, hacen de él un ser terrorífico. Cuanto menos ves más miedo sientes. El miedo a lo desconocido.
+
+Alien es el octavo pasajero, aquel a quien nadie ha invitado a bordo, la peor pesadilla de los tripulantes de la Nostromo y de los espectadores de la película. Su cabeza alargada, deforme, con boca retráctil y mandíbula demoledora, sin ojos visibles y con ácido en lugar de sangre corriéndole por su oscura estructura acabada en cola hacen de la bestia el monstruo definitivo, surgido de la macabra imaginación del pintor suizo Hans Ruedi Giger.
+
+Con tres secuelas y dos especies de spin-off ("Alien Vs. Predator"), esta primera parte destaca no sólo por dar a la criatura vida propia, sino también por dársela a sus personajes humanos, desmitificando la teoría de que película de monstruos equivale a nulo desarrollo de sus personajes. La cinta se apoya en un guión sólido y un montaje vibrante y claustrofóbico, y un manejo de cámara que desde el inicio de la cinta, en que el título de ésta empieza a aparecer en pantalla con el espacio de fondo y recorremos los vacíos pasillos de la Nostromo, se revela como la gran obra de un genio aún mayor.
+
+Bien hecho también, Scott, al cambiar el primer título (el manido "Star"), por el más conciso, directo e inquietante " A L I E N ".'),
+                                                        (19, 33, 'Ridley Scott firmó su sentencia al otorgar a la desconocida Sigourney Weaver el papel protagonista de "Alien", una impresionante y imprescindible cinta de ciencia ficción que ha sido mil veces copiada a lo largo de los años. Y firmó su sentencia por que estamos probablemente ante una película enorme, casi inmejorable y de la que cientos de miles de cineastas han copiado/copiado detalles.
+
+¿La razón de su éxito? Lo que no enseña. Sabemos que están en un planeta deshabitado, donde sólo hay millones de huevos extraños, un bicho que se pliega a la cara de un ser humano y se gesta en su interior. Sabemos que el Alien tiene los dientes afilados, es bípedo y tiene la piel pegajosa. Que su sangre es ácido... y que es letal. Todo esto lo sabemos y desconocemos cientos de cosas más: Ahí está la gracia, en saber con que nos sorprende Scott a medida progresa.
+
+Las interpretaciones son incluso buenas para una cinta del género, quizá es que por aquel entonces se intentaban trabajar los gestos, gritos y demás elementos para darle un poco de realismo al relato. Quien sabe. El caso es que sobresale una Sigourney Weaver que logró el éxito así, al igual que un notable Ian Holm y John Hurt.
+
+Los efectos especiales de excepción, el diseño del alien, la decoración, ambientación, esa impresionante BSO... todo contribuye a crear una tensión única. Por muchos Depredator, Godzilla, Arañas mutantes o Calamares gigantes que veamos, en cintas americanas, asiáticas o europeas, pocas veces vamos a encontrar una tensión como en Alien. Sin duda se ha ganado su categoría de icono del género, aunque me gustaría saber cómo se habría tratado si en lugar de estrenarse en 1979 la pusiesen ahora en el cine. Dudo que tan, tan, tan bien.'),
+                                                        (19, 35, 'Una manera de crear un ambiente apropiado para el terror es aislar a unos personajes. Una forma inequívoca de presentar el futuro es con una nave espacial. A partir de ahí, las escenas seguirán con los pasillos de la nave.
+
+Los pasillos de una nave interestelar pueden ser como los del Enterprise: blancos, luminosos, sin aristas y música ambiental; o como los del Nostromo: tubulares, silenciosos, muy oscuros y todo lleno de mangueras de pvc grasientas, por las paredes y por el techo.
+El capitán Kirk y Mr. Spock jamás se subirían a una nave como la de Nostromo. Por favor… Que hay clases ... El Nostromo es una nave para meter miedo y para crear el debido aire fantástico que Alien necesita.
+
+El carguero Nostromo es inmenso, su diseño es altamente complejo e irreal; la tripulación son obreros transportistas contratados. Algún sindicalista y algún infiltrado puede que haya.
+
+Cuando el negro le dice al compañero que vaya a buscar al gato por los recovecos esos tan lúgubres, ya puedes confirmar sin miedo a equivocarte que la película es una obra de arte del suspense, del terror y del cine en general. Un clásico con todos los elementos perfectamente encajados para que todo funcione, para gritarle al técnico que está loco… ¡Qué no vaya!
+
+Alien. Una película con las características perfectas. El día que naveguen cargueros por el espacio, Alien de RS, nos pondrá en aviso. Y los pasajeros seguirán necesitando billete para viajar por el espacio.'),
+                                                        (19, 13, '"Alien: el octavo pasajero" ha dejado un legado duradero en el cine y se ha convertido en un hito del género de la ciencia ficción. Su influencia y relevancia perduran hasta el día de hoy, y su impacto se ha extendido más allá de la pantalla grande. La película sentó las bases para una exitosa franquicia cinematográfica que ha explorado y expandido el fascinante universo de Alien a lo largo de los años, con secuelas, precuelas y spin-offs que han continuado desarrollando la historia y los personajes.
+
+Pero más allá de su influencia en el cine, "Alien: el octavo pasajero" ha permeado en la cultura popular y ha dejado una huella indeleble en otros aspectos del arte y el entretenimiento. Su estética visual distintiva, creada por el genio creativo de H.R. Giger, ha influido en el diseño de criaturas y ambientes en una amplia gama de medios, desde videojuegos hasta cómics y arte contemporáneo. La imagen icónica del Alien se ha convertido en un símbolo reconocible y ha sido homenajeada y referenciada en numerosas ocasiones, demostrando su impacto duradero en la conciencia colectiva.
+
+Además, "Alien: el octavo pasajero" ha sido elogiada por su enfoque innovador dentro del género. La película desafió las convenciones establecidas, rompiendo con los estereotipos y roles tradicionales de género. Presentó a una heroína icónica en la figura de Ellen Ripley, interpretada brillantemente por Sigourney Weaver, quien se convirtió en un símbolo de fortaleza y empoderamiento femenino en el cine. La película también abordó temas sociales y políticos subyacentes, como la corporatización despiadada y la explotación de los recursos naturales, estableciendo una crítica mordaz y provocativa que trascendió los límites del género.
+
+En resumen, "Alien: el octavo pasajero" es una película que ha dejado una marca imborrable en la historia del cine. Su combinación de terror, ciencia ficción y temas profundos, respaldados por una dirección magistral, una banda sonora impactante y actuaciones destacadas, la convierten en una obra maestra del séptimo arte. Su influencia en el cine y la cultura popular sigue siendo evidente hasta el día de hoy, y su legado perdura como un testimonio de su impacto y relevancia duradera en la industria cinematográfica y más allá.')
                                                         ;
 
 
@@ -921,7 +1045,7 @@ INSERT INTO likes VALUES (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7),
                          (35, 3), (35, 5), (35, 7), (35, 9), (35, 11), (35, 13), (35, 15), (35, 17), (35, 19), (35, 21), (35, 23), (35, 25), (35, 27), (35, 29), (35, 31), (35, 33), (35, 35), (35, 37), (35, 39), (35, 41), (35, 43), (35, 45), (35, 47), (35, 49), (35, 51), (35, 53), (35, 55), (35, 57), (35, 59), (35, 61), (35, 63), (35, 65), (35, 67), (35, 69), (35, 71), (35, 73), (35, 75), (35, 77), (35, 79), (35, 81), (35, 83), (35, 85), (35, 87), (35, 89), (35, 91), (35, 93), (35, 95), (35, 97), (35, 99), (35, 101), (35, 103), (35, 105), (35, 107), (35, 109), (35, 111), (35, 113), (35, 115), (35, 117), (35, 119), (35, 121), (35, 123), (35, 125), (35, 127), (35, 129), (35, 131), (35, 133), (35, 135), (35, 137), (35, 139), (35, 141), (35, 143), (35, 145), (35, 147), (35, 149), (35, 151), (35, 153), (35, 155), (35, 157), (35, 159), (35, 161), (35, 163), (35, 165),
                          (36, 1), (36, 2), (36, 3), (36, 4), (36, 5), (36, 6), (36, 7), (36, 8), (36, 9), (36, 10), (36, 11), (36, 12), (36, 13), (36, 14), (36, 15), (36, 16), (36, 17), (36, 18), (36, 19), (36, 20), (36, 21), (36, 22), (36, 23), (36, 24), (36, 25), (36, 26), (36, 27), (36, 28), (36, 29), (36, 30), (36, 31), (36, 32), (36, 33), (36, 34), (36, 35), (36, 36), (36, 37), (36, 38), (36, 39), (36, 40), (36, 41), (36, 42), (36, 43), (36, 44), (36, 45), (36, 46), (36, 47), (36, 48), (36, 49), (36, 50), (36, 51), (36, 52), (36, 53), (36, 54), (36, 55), (36, 56), (36, 57), (36, 58), (36, 59), (36, 60), (36, 61), (36, 62), (36, 63), (36, 64), (36, 65), (36, 66), (36, 67), (36, 68), (36, 69), (36, 70), (36, 71), (36, 72), (36, 73), (36, 74), (36, 75), (36, 76), (36, 77), (36, 78), (36, 79), (36, 80), (36, 81), (36, 82), (36, 83), (36, 84), (36, 85), (36, 86), (36, 87), (36, 88), (36, 89), (36, 90), (36, 91), (36, 92), (36, 93), (36, 94), (36, 95), (36, 96), (36, 97), (36, 98), (36, 99), (36, 100), (36, 101), (36, 102), (36, 103), (36, 104), (36, 105), (36, 106), (36, 107), (36, 108), (36, 109), (36, 110), (36, 111), (36, 112), (36, 113), (36, 114), (36, 115), (36, 116), (36, 117), (36, 118), (36, 119), (36, 120), (36, 121), (36, 122), (36, 123), (36, 124), (36, 125), (36, 126), (36, 127), (36, 128), (36, 129), (36, 130), (36, 131), (36, 132), (36, 133), (36, 134), (36, 135), (36, 136), (36, 137), (36, 138), (36, 139), (36, 140), (36, 141), (36, 142), (36, 143), (36, 144), (36, 145), (36, 146), (36, 147), (36, 148), (36, 149), (36, 150), (36, 151), (36, 152), (36, 153), (36, 154), (36, 155), (36, 156), (36, 157), (36, 158), (36, 159), (36, 160), (36, 161), (36, 162), (36, 163), (36, 164), (36, 165), (36, 166),
                          (37, 2), (37, 4), (37, 6), (37, 8), (37, 10), (37, 12), (37, 14), (37, 16), (37, 18), (37, 20), (37, 22), (37, 24), (37, 26), (37, 28), (37, 30), (37, 32), (37, 34), (37, 36), (37, 38), (37, 40), (37, 42), (37, 44), (37, 46), (37, 48), (37, 50), (37, 52), (37, 54), (37, 56), (37, 58), (37, 60), (37, 62), (37, 64), (37, 66), (37, 68), (37, 70), (37, 72), (37, 74), (37, 76), (37, 78), (37, 80), (37, 82), (37, 84), (37, 86), (37, 88), (37, 90), (37, 92), (37, 94), (37, 96), (37, 98), (37, 100), (37, 102), (37, 104), (37, 106), (37, 108), (37, 110), (37, 112), (37, 114), (37, 116), (37, 118), (37, 120), (37, 122), (37, 124), (37, 126), (37, 128), (37, 130), (37, 132), (37, 134), (37, 136), (37, 138), (37, 140), (37, 142), (37, 144), (37, 146), (37, 148), (37, 150), (37, 152), (37, 154), (37, 156), (37, 158), (37, 160), (37, 162), (37, 164), (37, 166)
-;
+                        ;
 
 
 
@@ -1288,26 +1412,26 @@ INSERT INTO trailers (obra_id, trailers) VALUES (1, 'https://www.youtube.com/emb
                                                 (59, 'https://www.youtube.com/embed/3cHLcwgtQas'),
                                                 (60, 'https://www.youtube.com/embed/vz2_xS4TN6w'),
                                                 (61, 'https://www.youtube.com/embed/NaM7nKvX4Es'),
-                                                (62, ''),
-                                                (63, ''),
-                                                (64, ''),
-                                                (65, ''),
-                                                (66, ''),
-                                                (67, ''),
-                                                (68, ''),
-                                                (69, ''),
-                                                (70, ''),
-                                                (71, ''),
-                                                (72, ''),
-                                                (73, ''),
-                                                (74, ''),
-                                                (75, ''),
-                                                (76, ''),
-                                                (77, ''),
-                                                (78, ''),
-                                                (79, ''),
-                                                (80, ''),
-                                                (81, ''),
-                                                (82, ''),
-                                                (83, '')
+                                                (62, 'https://www.youtube.com/embed/MgR-44QaKPQ'),
+                                                (63, 'https://www.youtube.com/embed/HguSMW8XveQ'),
+                                                (64, 'https://www.youtube.com/embed/b5HAg7zbq4w'),
+                                                (65, 'https://www.youtube.com/embed/RPs_-ppUpYk'),
+                                                (66, 'https://www.youtube.com/embed/19Jh9PVIRP4'),
+                                                (67, 'https://www.youtube.com/embed/QHWfQvnCrmY'),
+                                                (68, 'https://www.youtube.com/embed/9CEdb0sGfaI'),
+                                                (69, 'https://www.youtube.com/embed/WM6lC8BqcYE'),
+                                                (70, 'https://www.youtube.com/embed/8dSEXcZtWNs'),
+                                                (71, 'https://www.youtube.com/embed/LWB4ESEsnMY'),
+                                                (72, 'https://www.youtube.com/embed/8dxh3lwdOFw'),
+                                                (73, 'https://www.youtube.com/embed/MF7JH_54d8c'),
+                                                (74, 'https://www.youtube.com/embed/0bYB2xZ0Fuo'),
+                                                (75, 'https://www.youtube.com/embed/mDz5CrXAAT4'),
+                                                (76, 'https://www.youtube.com/embed/Zqoyl2p8_lw'),
+                                                (77, 'https://www.youtube.com/embed/tGZdtqJELk8'),
+                                                (78, 'https://www.youtube.com/embed/vOlRhGEhG7k'),
+                                                (79, 'https://www.youtube.com/embed/exJOy6uTkek'),
+                                                (80, 'https://www.youtube.com/embed/I7wfgloXxRk'),
+                                                (81, 'https://www.youtube.com/embed/FE22wpIK1vM'),
+                                                (82, 'https://www.youtube.com/embed/MmUhbSZMjOY'),
+                                                (83, 'https://www.youtube.com/embed/HcIMY1Ah3aw')
                                                 ;

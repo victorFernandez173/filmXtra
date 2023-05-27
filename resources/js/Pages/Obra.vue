@@ -17,14 +17,7 @@ import Swal from "sweetalert2";
 import Estrellitas from "../Components/Estrellitas.vue";
 import Trailers from "../Components/Trailers.vue";
 
-const props = defineProps({
-    obra: Object,
-    mediaEvaluaciones: Number,
-    criticas: Object,
-    saga: [Object, String],
-    secuelaPrecuela: Object,
-    profesionales: Object
-})
+const props = defineProps(['obra', 'mediaEvaluaciones', 'criticas', 'saga', 'secuelaPrecuela', 'profesionales']);
 
 // Funcion para ordenar array por clave interna
 const ordenarAnidado = (p1, p2 = null, sentido = 'asc') => (e1, e2) => {
@@ -124,11 +117,11 @@ function procesarGustadas($usuario, $gustadas) {
             <div class="flex justify-start flex-col m-auto h-[100%] w-[90%]">
                 <img :src="'../posters/' + obra[0]['poster']['ruta']" :alt="obra[0].poster.alt">
                 <!--Puntuacion-->
-                <Estrellitas :mediaEvaluaciones="mediaEvaluaciones" :obra="obra"/>
+                <Estrellitas :mediaEvaluaciones="mediaEvaluaciones" :obra="obra" :mostrar-votos="true"/>
             </div>
 
             <!--Datos pelicula-->
-            <div class="flex justify-center mr-10 w-full md:-ml[150px]">
+            <div class="flex justify-center mr-10 pl-10 pr-10 w-full md:-ml[150px]">
                 <ul>
                     <!--Datos de la pelicula-->
                     <li class="list-disc font-bold text-flamingo text-xl"><span class="underline">Obra</span>:</li>
@@ -180,7 +173,9 @@ function procesarGustadas($usuario, $gustadas) {
                                 </ul>
                             </li>
                             <li v-if="saga" class="list-disc font-bold text-flamingo text-xl mt-2"><span
-                                class="underline">Saga</span>:
+                                class="underline">Saga</span>: <span class="inline-block w-full text-center mb-1">&nbsp;{{
+                                    saga[0]['nombre']
+                                }}</span>
                             </li>
                             <!-- Si solo hay un poster en secuelas, flex justify-center -->
                             <div v-if="secuelasOrdenadas && secuelasOrdenadas.length <= 1"
@@ -216,7 +211,7 @@ function procesarGustadas($usuario, $gustadas) {
 
         <!--Contenedor criticas-->
         <div
-            class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10 mb-15 justify-center bg-flamingo text-white rounded lg:divide-x md:divide-x divide-y">
+            class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10 mb-15 pr-10 justify-center bg-flamingo text-white rounded lg:divide-x md:divide-x divide-y ">
             <!--Criticas-->
             <div class="py-10 pl-12 lg:col-span-3 md:col-span-2">
                 <!--Titulo-->
@@ -225,23 +220,32 @@ function procesarGustadas($usuario, $gustadas) {
                         profesionales:
                     </li>
                 </ul>
-                <ul>
+                <ul v-for="(p, i) in profesionales">
                     <!--Críticas profesionales-->
-                    <li v-for="p in profesionales" class="list-disc ml-5"><span class="font-semibold"><a
-                        class="underline hover:text-black" :href="p['web']" target="_blank"
-                        href="">{{ p['medio'] }}</a>:</span> {{ p['contenido'] }} <span
-                        class="italic">{{ p['autor'] }}</span>
-                        <span v-if="p['fecha']"> ({{ dayjs(p['fecha']).fromNow() }})</span>
+                    <li class="list-disc ml-5 mb-5">
+                        <span class="font-semibold">
+                            <a
+                                class="underline hover:text-black" :href="p['web']" target="_blank"
+                            >{{ p['medio'] }}
+                            </a>:
+                        </span> {{ p['contenido'] }}
+                        <span
+                            class="italic">{{ p['autor'] }}
+                        </span>
+                        <span v-if="p['fecha']"> ({{ dayjs(p['fecha']).fromNow() }})
+                        </span>
                     </li>
                 </ul>
                 <!--Titulo-->
                 <ul>
                     <li class="list-disc font-bold text-black text-xl mt-3">Críticas de nuestros usuarios:</li>
                 </ul>
-                <ul>
+                <ul v-for="(cri, i) in criticas['data']">
                     <!--Críticas usuarios-->
-                    <li v-for="(cri, i) in criticas" class="list-disc ml-5"><span
-                        class="underline font-semibold">{{ cri['usuario'][0]['name'] }}</span>: {{ cri['critica'] }}
+                    <li v-if="i < 2" class="list-disc ml-5 mb-5">
+                        <span
+                            class="underline font-semibold">{{ cri['usuario'][0]['name'] }}
+                        </span>: {{ cri['critica'] }}
                         ({{ dayjs(cri['fecha']).fromNow() }}) - Likes: {{ cri['likes'] }}
 
                         <!--Mano arriba-->
@@ -250,7 +254,7 @@ function procesarGustadas($usuario, $gustadas) {
                               :data="{ user_id: $page.props.auth.user['id'], critica_id: cri['id_critica'] }"
                               preserveScroll>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                 :fill=" procesarGustadas($page.props.auth.user, $page.props.criticas[i]) ? 'black' : 'white'"
+                                 :fill=" procesarGustadas($page.props.auth.user, $page.props.criticas['data'][i]) ? 'black' : 'white'"
                                  class="w-5 h-5 inline-block hover:fill-yellow-300">
                                 <path
                                     d="M1 8.25a1.25 1.25 0 112.5 0v7.5a1.25 1.25 0 11-2.5 0v-7.5zM11 3V1.7c0-.268.14-.526.395-.607A2 2 0 0114 3c0 .995-.182 1.948-.514 2.826-.204.54.166 1.174.744 1.174h2.52c1.243 0 2.261 1.01 2.146 2.247a23.864 23.864 0 01-1.341 5.974C17.153 16.323 16.072 17 14.9 17h-3.192a3 3 0 01-1.341-.317l-2.734-1.366A3 3 0 006.292 15H5V8h.963c.685 0 1.258-.483 1.612-1.068a4.011 4.011 0 012.166-1.73c.432-.143.853-.386 1.011-.814.16-.432.248-.9.248-1.388z"/>
@@ -264,25 +268,36 @@ function procesarGustadas($usuario, $gustadas) {
                         </svg>
                     </li>
                 </ul>
-                <p v-if="!criticas[0]" class="py-3">Sin críticas de usuarios todavía. Participa, pon la tuya.</p>
+                <p>[...]</p>
+                <p v-if="!criticas['data'][0]" class="py-3">Sin críticas de usuarios todavía. Participa, pon la tuya.</p>
+                <Link :href="route('fichaValoraciones', encodeURIComponent(obra[0]['titulo']))" as="button"
+                      class="my-5 m-auto text-flamingo bg-white hover:text-black focus:bg-white focus:ring-flamingo focus:text-flamingo focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5"  preserve-scroll>
+                    Ver más críticas/Valorar {{ obra[0]['titulo'] }}&rarr;
+                </Link>
             </div>
 
-            <!--Botones para votar y formulario para escribir-->
-            <div class="py-5 px-5">
+            <!--Seccion valorar-->
+            <div class="py-5 px-5 pl-10">
                 <!--Titulo-->
                 <h3 class="font-bold underline text-black text-xl my-5 text-center">¿Quieres valorar esta
                     película?</h3>
-                <h4>En filmXtra queremos que compartas y opines sobre nuestra gran pasión que es el cine por eso puedes:</h4>
+                <h4>En filmXtra queremos que opines sobre nuestra gran pasión que es el cine por eso puedes:</h4>
                 <ul class="list-disc ml-[20px]">
                     <li>Evaluar películas (sobre 10)</li>
                     <li>Hacer críticas más elaboradas de ellas si te gusta entrar en detalles</li>
-                    <li>Dar like a las críticas de otros usuarios </li>
+                    <li>Dar like a las críticas de otros usuarios</li>
                 </ul>
+                <div class="mt-10">
+                    <Link as="button" :href="route('valoraciones')"
+                          class="my-15 m-auto text-flamingo bg-white hover:text-black focus:bg-white focus:ring-flamingo focus:text-flamingo focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 block" preserve-scroll>
+                        Top Valoraciones &rarr;
+                    </Link>
+                </div>
             </div>
 
         </div>
         <!-- Componente para el trailer-->
-        <Trailers :obra="obra" />
+        <Trailers :obra="obra"/>
 
     </div>
 </template>
