@@ -23,7 +23,7 @@ class RegisteredUserController extends Controller
      */
     public function create(): Response
     {
-        Redirect::setIntendedUrl(url()->previous());
+        //Redirect::setIntendedUrl(url()->previous());
 
         return Inertia::render('Auth/Register');
     }
@@ -42,7 +42,7 @@ class RegisteredUserController extends Controller
             'email' => $validated['email'],
             'password' => Hash::make($validated['password']),
         ]);
-        dd($user);
+        /*dd($user);*/
 
         event(new Registered($user));
 

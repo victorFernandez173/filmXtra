@@ -24,14 +24,18 @@ class VerifyEmailController extends Controller
         /*dd($request);*/
         if (session('user')->hasVerifiedEmail()) {
             /*dd(session('user'));*/
+            error_log('EMAIL VERIFICADO VERIFY EMAIL CONTROLLER');
             Auth::login(session('user'));
             return redirect()->intended(RouteServiceProvider::HOME.'?verified=1');
         }
         /*dd(session('user'));*/
         if (session('user')->markEmailAsVerified()) {
+            error_log('NUEVO VERIFICADO VERIFY EMAIL CONTROLLER');
             event(new Verified(session('user')));
             Auth::login(session('user'));
         }
+
+        error_log('POR AQUÍ VA');
 
         return redirect()->intended(RouteServiceProvider::HOME.'?verified=1');
     }

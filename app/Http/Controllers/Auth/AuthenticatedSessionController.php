@@ -23,7 +23,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): Response
     {
-        Redirect::setIntendedUrl(url()->previous());
+        //Redirect::setIntendedUrl(url()->previous());
         return Inertia::render('Auth/Login', [
             'canResetPassword' => Route::has('password.request'),
             'status' => session('status'),
@@ -57,15 +57,15 @@ class AuthenticatedSessionController extends Controller
             $user = new User([
                 'id' => $email->id,
                 'email' => $email->email,
-                'password' => Hash::make($email->password)
+                'password' => $email->password,
             ]);
 
             /*dd($user->getAttributes());*/
             //->getKey()
             /*dd($user);*/
-            session(['user' => $user]);
+            session('user', $user);
             /*dd($user->hasVerifiedEmail());*/
-            if($user->hasVerifiedEmail()){
+            if(session('user')->hasVerifiedEmail()){
                 error_log('TIENE EL MAIL VERIFICADO !');
                 Auth::login(session('user'));
                 return redirect()->intended(RouteServiceProvider::HOME);
