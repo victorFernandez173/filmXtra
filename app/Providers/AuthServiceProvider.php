@@ -33,6 +33,8 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         VerifyEmail::toMailUsing(function ($notifiable, $url) {
+            error_log('URL !!!!');
+            error_log($url);
             return (new MailMessage)
                 ->subject('Correo de validación FilmXtra !')
                 ->line('Pincha aquí abajo para verificar tu correo y así poder compartir tu

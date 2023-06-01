@@ -17,12 +17,12 @@ class EmailVerificationNotificationController extends Controller
      */
     public function store(Request $request): JsonResponse | RedirectResponse | Response
     {
-        if (session('user')->hasVerifiedEmail()) {
+        if (session()->get('user')->hasVerifiedEmail()) {
             error_log('ZZZZZZZZZZZZZZZZZZZZZZ');
             return redirect()->intended(RouteServiceProvider::HOME);
         }
 
-        session('user')->sendEmailVerificationNotification();
+        session()->get('user')->sendEmailVerificationNotification();
         response()->json(['status' => 'verification-link-sent']);
 
         return Inertia::render('Auth/VerifyEmail');

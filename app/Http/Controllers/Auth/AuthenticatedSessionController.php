@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 use Inertia\Response;
 use Redirect;
@@ -38,7 +39,7 @@ class AuthenticatedSessionController extends Controller
         error_log('VUUUUUUEEEEELTAAAAAA');
         $request->authenticate();
         /*dd($request);*/
-        /*$request->session()->regenerate();*/
+        $request->session()->regenerate();
 
         /*if($request->user()->hasVerifiedEmail()){
             return redirect()->intended(RouteServiceProvider::HOME);
@@ -54,23 +55,33 @@ class AuthenticatedSessionController extends Controller
             /*dd($request->input());*/
             /*dd($email);*/
         //if($email != null){
+            /*$user = new User([$email]);*/
             $user = new User([
-                'id' => $email->id,
+                'name' => $email->name,
                 'email' => $email->email,
                 'password' => $email->password,
+                'email_verified_at' => $email->email_verified_at,
+                'created_at' => $email->created_at,
+                'updated_at' => $email->updated_at,
+                'id' => $email->id
             ]);
-
             /*dd($user->getAttributes());*/
             //->getKey()
-            /*dd($user);*/
-            session('user', $user);
-            /*dd($user->hasVerifiedEmail());*/
-            if(session('user')->hasVerifiedEmail()){
+            //$_SESSION['user'] = $user;
+            /*Session::put('user', $user);*/
+            session(['user' => $user]);
+            //dd($email->email_verified_at);
+            /*dd(session('user')->hasVerifiedEmail());*/
+            if(session()->get('user')->hasVerifiedEmail()){
                 error_log('TIENE EL MAIL VERIFICADO !');
                 Auth::login(session('user'));
                 return redirect()->intended(RouteServiceProvider::HOME);
             }
         //}
+            //unset($user['email_verified_at']);
+            error_log(session()->get('user') . ' PRUEBAS');
+            //session()->get('user')->forceDelete('email_verified_at');
+            //dd(session()->get('user'));
             error_log('NOOOO TIENE EL MAIL VERIFICADO !');
             /*dd($user->hasVerifiedEmail());*/
             return redirect('verify-email');

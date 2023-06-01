@@ -5,22 +5,51 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Date;
 use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Http\RedirectResponse;
 
-class ProviderController extends Controller
+class SocialAuthController extends Controller
 {
-    public function redirect($provider)
+    /**
+     * Redirect the user to the Google authentication page
+     * 
+     */
+    public function redirectToProvider(): RedirectResponse
     {
-        return Socialite::driver($provider)->redirect();
+        return Socialite::driver('google')->redirect();
     }
 
-    public function callback($provider)
+    public function handleCallback(): RedirectResponse
+    {
+        try{
+            $user = Socialite::driver('google')->user();
+        } catch(\Exception $e) {
+            return redirect('/login');
+        }
+
+        $userExist = User::where('google_id', $user->id)->first();
+
+        if ($userExist) {
+            Auth::login($userExist);
+        }else{
+            $newUser = User::create([
+                'email' => $user->email,
+                'google_id' => $user->id,
+                'password' => $user->id,
+                'email_verified_at' => Date::now()
+            ]);
+            Auth::login($newUser);
+        }
+
+        return redirect('/');
+
+    }
+
+    /*public function callback($provider)
     {
         try {
             $SocialUser = Socialite::driver($provider)->user();
-            //dd($SocialUser);
            if(User::where('email', $SocialUser->getEmail())->exists()){
                return redirect('/login')->withErrors(['email' => 'This email uses different method to login.']);
            }
@@ -34,7 +63,7 @@ class ProviderController extends Controller
                $user = User::create([
                    'name' => $SocialUser->getName(),
                    'email' => $SocialUser->getEmail(),
-                   /*'username' => User::generateUserName($SocialUser->getNickname()),*/
+                   'username' => User::generateUserName($SocialUser->getNickname()),
                    'password' => $password,
                    'provider' => $provider,
                    'provider_id' => $SocialUser->getId(),
@@ -53,5 +82,5 @@ class ProviderController extends Controller
         } catch (\Exception $e){
             return redirect('/login');
         }
-    }
+    }*/
 }

@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\Auth\SocialAuthController;
 use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +45,12 @@ Route::middleware('guest')->group(function () {
                 ->middleware(['signed', 'throttle:6,1'])
                 ->name('verification.verify');*/
 });
+
+    Route::get('login-google', [SocialAuthController::class, 'redirectToProvider'])
+                ->name('google.login');
+
+    Route::get('auth/google/callback', [SocialAuthController::class, 'handleCallback'])
+                ->name('google.login.callback');
 
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
                     ->name('login');

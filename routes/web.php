@@ -36,8 +36,8 @@ Route::get('valoraciones/{titulo}', [FichaValoracionController::class, 'obtenerF
 
 Route::post('/like', [LikeController::class, 'darLike'])->name('darLike')->middleware(['auth', 'verified']);
 
-Route::get('/auth/{provider}/redirect', [ProviderController::class, 'redirect'])->name('redirect');
-Route::get('/auth/{provider}/callback', [ProviderController::class, 'callback'])->name('callback');
+/*Route::get('/auth/{provider}/redirect', [ProviderController::class, 'redirect'])->name('redirect');
+Route::get('/auth/{provider}/callback', [ProviderController::class, 'callback'])->name('callback');*/
 
 Route::post('evaluar', [EvaluacionController::class, 'evaluar'])->name('evaluar')->middleware(['auth', 'verified']);;
 
