@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Http\RedirectResponse;
 
@@ -38,7 +39,7 @@ class SocialAuthController extends Controller
             $newUser = User::create([
                 'email' => $user->email,
                 'google_id' => $user->id,
-                'password' => $user->id,
+                'password' => Hash::make($user->id),
                 'email_verified_at' => Date::now()
             ]);
             Auth::login($newUser);
