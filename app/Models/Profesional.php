@@ -42,7 +42,7 @@ class Profesional extends Model
     ];
 
     /**
-     * The attributes that are mass assignable.
+     * Atributos asignables.
      *
      * @var array<int, string>
      */
@@ -55,7 +55,7 @@ class Profesional extends Model
     ];
 
     /**
-     * Get the director of the obra
+     * Obtiene el director
      */
     public function obra(): BelongsTo
     {
@@ -63,7 +63,7 @@ class Profesional extends Model
     }
 
     /**
-     * Get the director of the obra
+     * Obtiene el medio
      */
     public function medio(): BelongsTo
     {

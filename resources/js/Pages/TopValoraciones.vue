@@ -7,7 +7,7 @@ export default {
 }
 </script>
 
-<!--script estandar para lo habitual-->
+<!--script estándar-->
 <script setup>
 import { Head } from "@inertiajs/vue3";
 import Paginacion from "../Components/Paginacion.vue";

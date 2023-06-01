@@ -23,7 +23,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class DirectorObra extends Model
 {
     /**
-     * The table associated with the model.
+     * Tabla.
      *
      * @var string
      */
@@ -38,7 +38,7 @@ class DirectorObra extends Model
     protected $primaryKey = null;
 
     /**
-     * Indicates if the IDs are auto-incrementing.
+     * Indica si hay auto_increment
      *
      * @var bool
      */
@@ -51,7 +51,7 @@ class DirectorObra extends Model
     public $timestamps = false;
 
     /**
-     * The attributes that are mass assignable.
+     * Attributos asignables
      *
      * @var int[]
      */

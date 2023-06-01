@@ -35,7 +35,7 @@ class Saga extends Model
     ];
 
     /**
-     * The attributes that are mass assignable.
+     * Atributos asignables.
      *
      * @var array<int, string>
      */
@@ -44,7 +44,7 @@ class Saga extends Model
     ];
 
     /**
-     * Get the Secuelas of the saga.
+     * Obtiene las secuelas.
      */
     public function secuelas(): HasMany
     {

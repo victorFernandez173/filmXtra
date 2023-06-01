@@ -18,14 +18,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Trailer extends Model
 {
     /**
-     * The primary key associated with the table.
+     * Clave primaria.
      *
      * @var integer
      */
     protected $primaryKey = 'obra_id';
 
     /**
-     * Indicates if the model's ID is auto-incrementing.
+     * Indica si hay auto_increment.
      *
      * @var bool
      */
@@ -35,7 +35,7 @@ class Trailer extends Model
     const UPDATED_AT = 'modificado';
 
     /**
-     * The attributes that are mass assignable.
+     * Atributos asignables.
      *
      * @var int[]
      */

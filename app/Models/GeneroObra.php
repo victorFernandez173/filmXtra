@@ -23,7 +23,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class GeneroObra extends Model
 {
     /**
-     * The table associated with the model.
+     * Tabla
      *
      * @var string
      */
@@ -38,20 +38,20 @@ class GeneroObra extends Model
     protected $primaryKey = null;
 
     /**
-     * Indicates if the IDs are auto-incrementing.
+     * Indica si hay autoincrement
      *
      * @var bool
      */
     public $incrementing = false;
 
     /**
-     * No timestamps
+     * SIn timestamps
      * @var bool
      */
     public $timestamps = false;
 
     /**
-     * The attributes that are mass assignable.
+     * Atributos asignables.
      *
      * @var int[]
      */

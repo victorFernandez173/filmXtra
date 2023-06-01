@@ -3,7 +3,6 @@ import {Link} from "@inertiajs/vue3";
 </script>
 
 <template>
-    <!-- Seccion columna izquierda -->
     <section class="w-[4/12] text-xs sm:text-base sm:[&>ul>li]:pr-3 bg-flamingo p-4 pb-8 hover:[&>ul>li]:text-white [&>ul>li]:overflow-ellipsis [&>ul>li]:overflow-hidden">
         <!-- Genero -->
         <h5 class="py-4 font-bold underline">Género</h5>

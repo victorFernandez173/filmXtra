@@ -36,7 +36,7 @@ class Medio extends Model
     ];
 
     /**
-     * The attributes that are mass assignable.
+     * Atributos asignables.
      *
      * @var array<string>
      */
@@ -46,7 +46,7 @@ class Medio extends Model
     ];
 
     /**
-     * Get the profesionals for the obra.
+     * Obtener las criticas profesionales.
      */
     public function profesionals(): HasMany
     {

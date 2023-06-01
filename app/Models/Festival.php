@@ -36,7 +36,7 @@ class Festival extends Model
     ];
 
     /**
-     * The attributes that are mass assignable.
+     * Atributos asignables
      *
      * @var array<int, string>
      */
@@ -45,6 +45,10 @@ class Festival extends Model
         'edicion',
     ];
 
+    /**
+     * Obtiene la obra
+     * @return BelongsTo
+     */
     public function obra(): BelongsTo
     {
         return $this->belongsTo(Obra::class);

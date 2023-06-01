@@ -13,17 +13,17 @@ use App\Http\Controllers\Auth\SocialAuthController;
 use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
 use Illuminate\Support\Facades\Route;
 
+// Rutas para invitados
 Route::middleware('guest')->group(function () {
-
     Route::get('register', [RegisteredUserController::class, 'create'])
                 ->name('register');
 
-    Route::post('register', [RegisteredUserController::class, 'store'])
-                ->name('register');
-                // ->middleware('auth', 'verified')
+    Route::post('register', [RegisteredUserController::class, 'store']);
 
-    /*Route::post('register', [EnsureEmailIsVerified::class, 'handle'])
-                ->name('register');*/
+    Route::get('login', [AuthenticatedSessionController::class, 'create'])
+                ->name('login');
+
+    Route::post('login', [AuthenticatedSessionController::class, 'store']);
 
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
                 ->name('password.request');
@@ -36,54 +36,10 @@ Route::middleware('guest')->group(function () {
 
     Route::post('reset-password', [NewPasswordController::class, 'store'])
                 ->name('password.store');
-
-    /*Route::post('email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
-                ->middleware('throttle:6,1')
-                ->name('verification.send');*/
-
-    /*Route::get('verify-email/{id}/{hash}', [VerifyEmailController::class, '__invoke'])
-                ->middleware(['signed', 'throttle:6,1'])
-                ->name('verification.verify');*/
 });
 
-    Route::get('login-google', [SocialAuthController::class, 'redirectToProvider'])
-                ->name('google.login');
-
-    Route::get('auth/google/callback', [SocialAuthController::class, 'handleCallback'])
-                ->name('google.login.callback');
-
-    Route::get('login', [AuthenticatedSessionController::class, 'create'])
-                    ->name('login');
-
-    Route::post('login', [AuthenticatedSessionController::class, 'store']);
-
-    Route::get('verify-email', [EmailVerificationPromptController::class, '__invoke'])
-                    ->name('verification.notice');
-
-    Route::get('verify-email/{id}/{hash}', [VerifyEmailController::class, '__invoke'])
-                    ->middleware(['signed', 'throttle:6,1'])
-                    ->name('verification.verify');
-
-    Route::post('email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
-                    ->middleware('throttle:6,1')
-                    ->name('verification.send');
-
+// Rutas para usuarios autenticados
 Route::middleware('auth')->group(function () {
-    /*Route::get('verify-email', [EmailVerificationPromptController::class, '__invoke']) //__invoke
-                ->name('verification.notice');*/
-
-    /*Route::get('verify-email/{id}/{hash}', VerifyEmailController::class)
-                ->middleware(['signed', 'throttle:6,1'])
-                ->name('verification.verify');*/
-
-    /*Route::get('verify-email/{hash}', VerifyEmailController::class, '__invoke')
-                ->middleware(['signed', 'throttle:6,1'])
-                ->name('verification.verify');*/
-
-    /*Route::post('email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
-                ->middleware('throttle:6,1')
-                ->name('verification.send');*/
-
     Route::get('confirm-password', [ConfirmablePasswordController::class, 'show'])
                 ->name('password.confirm');
 
@@ -94,3 +50,26 @@ Route::middleware('auth')->group(function () {
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
 });
+
+// Otras rutas de verificación y redes sociales
+Route::get('login-google', [SocialAuthController::class, 'redirectToProvider'])
+    ->name('google.login');
+
+Route::get('auth/google/callback', [SocialAuthController::class, 'handleCallback'])
+    ->name('google.login.callback');
+
+Route::get('login', [AuthenticatedSessionController::class, 'create'])
+    ->name('login');
+
+Route::post('login', [AuthenticatedSessionController::class, 'store']);
+
+Route::get('verify-email', [EmailVerificationPromptController::class, '__invoke'])
+    ->name('verification.notice');
+
+Route::get('verify-email/{id}/{hash}', [VerifyEmailController::class, '__invoke'])
+    ->middleware(['signed', 'throttle:6,1'])
+    ->name('verification.verify');
+
+Route::post('email/verification-notification', [EmailVerificationNotificationController::class, 'store'])
+    ->middleware('throttle:6,1')
+    ->name('verification.send');

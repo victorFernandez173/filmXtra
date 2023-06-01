@@ -40,7 +40,7 @@ class Director extends Model
     ];
 
     /**
-     * The attributes that are mass assignable.
+     * Atributos asignables
      *
      * @var array<int, string>
      */
@@ -52,7 +52,7 @@ class Director extends Model
     ];
 
     /**
-     * Get the obras of the director
+     * Obras del director
      * @return BelongsToMany
      */
     public function obras(): BelongsToMany

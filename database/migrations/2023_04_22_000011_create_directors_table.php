@@ -8,7 +8,7 @@ use App\Models\Director;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Migrar.
      */
     public function up(): void
     {
@@ -29,7 +29,7 @@ return new class extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * Anular migración.
      */
     public function down(): void
     {

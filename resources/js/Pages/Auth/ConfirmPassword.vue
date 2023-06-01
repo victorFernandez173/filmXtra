@@ -21,7 +21,7 @@ const submit = () => {
         <title>Confirmar password</title>
         <meta name="description" content="Pagina de confirmacion de password">
     </Head>
-    <section class="bg-cover bg-[url('/images/posters-fondo.png')]">
+    <section class="h-[100vh] bg-cover bg-[url('/images/posters-fondo.png')]">
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
             <Link :href="route('/')" class="flex items-center mb-6 text-2xl font-semibold text-gray-900">
                 <img class="w-60 mr-2" src="/images/logo-blanco.png" alt="Logo FlimXtra">

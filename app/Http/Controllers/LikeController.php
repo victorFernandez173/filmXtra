@@ -8,6 +8,7 @@ use DB;
 class LikeController extends Controller
 {
     /**
+     * Para insertar tupla en likes o borrarla
      * @return void
      */
     public function darLike(): void

@@ -10,7 +10,7 @@ use Inertia\Response;
 class TopValoracionesController extends Controller
 {
     /**
-     * Peticiones GET: carga inicial o enlaces de filtrado de la barra lateral
+     * Peliculas ordenadas por numero de valoraciones
      * @return Response
      */
     public function cargarDatos(): Response

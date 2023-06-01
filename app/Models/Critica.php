@@ -42,7 +42,7 @@ class Critica extends Model
     ];
 
     /**
-     * The attributes that are mass assignable.
+     * Atributos asignables
      *
      * @var array<int, string>
      */
@@ -53,7 +53,7 @@ class Critica extends Model
     ];
 
     /**
-     * Get the obra associated with the crítica.
+     * Obtiene la obra de la crítica
      */
     public function obra(): BelongsTo
     {
@@ -61,7 +61,7 @@ class Critica extends Model
     }
 
     /**
-     * Get the usuario associated with the crítica.
+     * Obtiene el usuario de la crítica
      */
     public function user(): BelongsTo
     {
@@ -69,10 +69,10 @@ class Critica extends Model
     }
 
     /**
-     * Get the likes that belong to the user.
+     * Obtiene los likes de la critica
      */
     public function likes(): BelongsToMany
     {
-        return $this->belongsToMany(Like::class, 'likes', 'critica_id', 'user_id', 'id');
+        return $this->belongsToMany(User::class, 'likes', 'critica_id', 'user_id', 'id');
     }
 }

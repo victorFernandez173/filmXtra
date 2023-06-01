@@ -23,7 +23,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class ActorObra extends Model
 {
     /**
-     * The table associated with the model.
+     * Tabla asociada con el modelo
      *
      * @var string
      */
@@ -38,7 +38,7 @@ class ActorObra extends Model
     protected $primaryKey = null;
 
     /**
-     * Indicates if the IDs are auto-incrementing.
+     * Indica si el id es auto_increment.
      *
      * @var bool
      */
@@ -51,7 +51,7 @@ class ActorObra extends Model
     public $timestamps = false;
 
     /**
-     * The attributes that are mass assignable.
+     * Atributos asignables
      *
      * @var int[]
      */

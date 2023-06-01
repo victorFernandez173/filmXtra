@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use DB;
+use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Exception;
 
@@ -33,5 +34,26 @@ class BienvenidaController extends Controller
         return Inertia::render('Welcome', [
             'obras' => DB::table('obras')->select('obras.titulo', 'p.ruta', 'p.alt')->join('posters AS p', 'obras.id', '=', 'p.obra_id')->whereIn('obras.id', $this->obtenerDoceObrasAleatorias())->get()
         ]);
+    }
+
+    /**
+     * Devuelve la vista de bienvenida con esos 16 id
+     * @throws Exception
+     */
+    public function buscarTitulo(Request $request){
+
+        $obras = DB::table('obras')->select('obras.titulo', 'p.ruta', 'p.alt')->join('posters AS p', 'obras.id', '=', 'p.obra_id')->where('obras.titulo', 'like', '%' . $request['titulo'] . '%')->get();
+
+        if($request['titulo'] == null || count($obras) == 0){
+            return Inertia::render('Welcome', [
+                'obras' => DB::table('obras')->select('obras.titulo', 'p.ruta', 'p.alt')->join('posters AS p', 'obras.id', '=', 'p.obra_id')->whereIn('obras.id', $this->obtenerDoceObrasAleatorias())->get(),
+                'numResultados' => 0
+            ]);
+        }
+        return Inertia::render('Welcome', [
+            'obras' => $obras,
+            'numResultados' => count($obras)
+        ]);
+
     }
 }

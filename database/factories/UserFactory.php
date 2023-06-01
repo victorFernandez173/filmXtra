@@ -15,7 +15,7 @@ class UserFactory extends Factory
     User::factory()->count(1)->create(); */
 
     /**
-     * Define the model's default state.
+     * Estado por defecto con el generador para User.
      *
      * @return array<string, mixed>
      */
@@ -34,7 +34,7 @@ class UserFactory extends Factory
     }
 
     /**
-     * Indicate that the model's email address should be unverified.
+     * El email no estará verificado.
      */
     public function unverified(): static
     {

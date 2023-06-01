@@ -13,7 +13,7 @@ use Inertia\Response;
 class EmailVerificationNotificationController extends Controller
 {
     /**
-     * Send a new email verification notification.
+     * Enviar una nueva verificación de email.
      */
     public function store(Request $request): JsonResponse | RedirectResponse | Response
     {

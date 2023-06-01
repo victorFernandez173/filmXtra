@@ -13,7 +13,7 @@ use Monolog\Formatter\SyslogFormatter;
 class EmailVerificationPromptController extends Controller
 {
     /**
-     * Display the email verification prompt.
+     * Muestra el dialogo de verificación de email
      */
     public function __invoke(Request $request): RedirectResponse|Response
     {

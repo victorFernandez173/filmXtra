@@ -37,7 +37,7 @@ class Genero extends Model
     ];
 
     /**
-     * The attributes that are mass assignable.
+     * Atributos asignables
      *
      * @var array<int, string>
      */
@@ -45,7 +45,7 @@ class Genero extends Model
         'genero',
     ];
     /**
-     * Get the director of the obra
+     * Obtiene las obras
      */
     public function obras(): BelongsToMany
     {

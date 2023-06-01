@@ -23,14 +23,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Secuela extends Model
 {
     /**
-     * The primary key associated with the table.
+     * Primary key.
      *
      * @var integer
      */
     protected $primaryKey = 'obra_id';
 
     /**
-     * Indicates if the model's ID is auto-incrementing.
+     * Indica si hay auto-increment.
      *
      * @var bool
      */
@@ -53,7 +53,7 @@ class Secuela extends Model
     ];
 
     /**
-     * The attributes that are mass assignable.
+     * Atributos asignables.
      *
      * @var array<int, string>
      */
@@ -64,7 +64,7 @@ class Secuela extends Model
     ];
 
     /**
-     * Get the Saga associated with the Secuela.
+     * Obtiene la saga.
      */
     public function saga(): BelongsTo
     {
@@ -72,7 +72,7 @@ class Secuela extends Model
     }
 
     /**
-     * Get the Obra associated with the Secuela.
+     * Obtiene la obra.
      */
     public function obra(): BelongsTo
     {

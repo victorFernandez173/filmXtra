@@ -6,9 +6,10 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 
-class Paginacion extends Controller
+class PaginacionController extends Controller
 {
     /**
+     * Para a partir de un array paginar los datos
      * @param $items
      * @param int $perPage
      * @param $page

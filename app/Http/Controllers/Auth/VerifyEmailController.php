@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 class VerifyEmailController extends Controller
 {
     /**
-     * Mark the authenticated user's email address as verified.
+     * Marca el email autenticado del usuario como verificado.
      */
     public function __invoke(EmailVerificationRequest $request): RedirectResponse
     {

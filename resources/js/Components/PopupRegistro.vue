@@ -5,7 +5,7 @@
                 <div class="mb-4 text-sm font-light text-gray-50">
                     <h3 class="mb-3 text-2xl font-bold text-gray-900">Tu registro en FilmXtra se ha hecho correctamente</h3>
                     <p>
-                        ¡Bienvenid@o a bordo amig@! En FilmXtra encontrarás todas las películas que buscas en un click. Inicia sesión para disfrutar cuanto antes de tus privilegios.
+                        ¡Bienvenid@ a bordo amig@! En FilmXtra encontrarás todas las películas que buscas en un click. Inicia sesión para disfrutar cuanto antes de tus privilegios.
                     </p>
                 </div>
                 <div class="justify-between items-center pt-0 space-y-4 sm:flex sm:space-y-0">

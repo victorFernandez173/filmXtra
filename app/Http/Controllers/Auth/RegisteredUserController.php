@@ -11,22 +11,22 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
 use Inertia\Response;
-
+use Redirect;
 
 class RegisteredUserController extends Controller
 {
     /**
-     * Display the registration view.
+     * Muestra la vista de registro
      */
     public function create(): Response
     {
-        //Redirect::setIntendedUrl(url()->previous());
+        Redirect::setIntendedUrl(url()->previous());
 
         return Inertia::render('Auth/Register');
     }
 
     /**
-     * Handle an incoming registration request.
+     * Maneja la solicitud de registro.
      *
      * @throws ValidationException
      */
@@ -43,7 +43,7 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
 
         session(['user' => $user]);
-        
+
         return redirect('verify-email');
     }
 }

@@ -40,7 +40,7 @@ class Actor extends Model
     ];
 
     /**
-     * The attributes that are mass assignable.
+     * Atributos asignables.
      *
      * @var array<int, string>
      */
@@ -53,7 +53,7 @@ class Actor extends Model
     ];
 
     /**
-     * Get the directors of the obra
+     * Obtiene los directores de la obra
      */
     public function obras(): BelongsToMany
     {

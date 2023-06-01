@@ -41,10 +41,18 @@ class PersonalAccessToken extends Model
 		'expires_at' => 'datetime'
 	];
 
+    /**
+     * Escondidos
+     * @var string[]
+     */
 	protected $hidden = [
 		'token'
 	];
 
+    /**
+     * Atributos asignables
+     * @var string[]
+     */
 	protected $fillable = [
 		'tokenable_type',
 		'tokenable_id',

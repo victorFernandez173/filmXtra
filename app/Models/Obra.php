@@ -53,7 +53,7 @@ class Obra extends Model
     ];
 
     /**
-     * The attributes that are mass assignable.
+     * Atributos asignables.
      *
      * @var array<int, string>
      */
@@ -68,7 +68,7 @@ class Obra extends Model
     ];
 
     /**
-     * Get the secuelas of the obra.
+     * Obtener las secuelas.
      */
     public function secuela(): HasOne
     {
@@ -76,7 +76,7 @@ class Obra extends Model
     }
 
     /**
-     * Get the Poster associated with the obra.
+     * Obtener el poster.
      */
     public function poster(): HasOne
     {
@@ -84,7 +84,7 @@ class Obra extends Model
     }
 
     /**
-     * Get the Trailer object associated with the obra.
+     * Obtener el trailer.
      */
     public function trailer(): HasOne
     {
@@ -92,7 +92,7 @@ class Obra extends Model
     }
 
     /**
-     * Get the críticas for the obra.
+     * Obtener las críticas.
      */
     public function criticas(): HasMany
     {
@@ -100,7 +100,7 @@ class Obra extends Model
     }
 
     /**
-     * Get the evaluaciones for the obra.
+     * Obtener las evaluaciones.
      */
     public function evaluaciones(): HasMany
     {
@@ -108,7 +108,7 @@ class Obra extends Model
     }
 
     /**
-     * Get the generos for the obra
+     * Obtener los generos
      * @return BelongsToMany
      */
     public function generos(): BelongsToMany
@@ -117,7 +117,7 @@ class Obra extends Model
     }
 
     /**
-     * Get the director of the obra
+     * Obtener los directores
      */
     public function directors(): BelongsToMany
     {
@@ -125,7 +125,7 @@ class Obra extends Model
     }
 
     /**
-     * Get the críticas for the obra.
+     * Obtener los festivales.
      */
     public function festivals(): HasMany
     {
@@ -133,7 +133,7 @@ class Obra extends Model
     }
 
     /**
-     * Get the profesionals for the obra.
+     * Obtener las criticas profesionales.
      */
     public function profesionals(): HasMany
     {
@@ -141,7 +141,7 @@ class Obra extends Model
     }
 
     /**
-     * Get the director of the obra
+     * Obtener los actores
      */
     public function actors(): BelongsToMany
     {
