@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\LoginRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Date;
@@ -17,6 +18,7 @@ class SocialAuthController extends Controller
      */
     public function redirectToProvider(): RedirectResponse
     {
+        session()->regenerate();
         return Socialite::driver('google')->redirect();
     }
 
@@ -30,7 +32,7 @@ class SocialAuthController extends Controller
 
         $userExist = User::where('google_id', $user->id)->first();
 
-        if ($userExist) {
+        if ($userExist !== null) {
             Auth::login($userExist);
         }else{
             $newUser = User::create([
